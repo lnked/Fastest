@@ -13,21 +13,24 @@ svg {
 	border: none;
 	overflow: visible;
 	font: inherit;
+    text-align: center;
     text-transform: none;
+    text-decoration: none;
     display: inline-block;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0);
     vertical-align: middle;
-    text-decoration: none;
-    text-align: center;
     padding-top: 0;
     padding-bottom: 0;
-	outline: none;
 	cursor: pointer;
 	user-select: none;
 	-webkit-appearance: none;
 	border-color: rgba(0, 0, 0, 0);
-	transition: border-color $a-time ease, background-color $a-time ease, color $a-time ease;
+    transition: border-color $a-time ease, background-color $a-time ease, color $a-time ease;
+
+    &:focus {
+        outline: 0;
+    }
 }
 
 %clearfix {

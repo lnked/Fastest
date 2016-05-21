@@ -1,11 +1,10 @@
 .layout-header {
     height: 60px;
     background-color: $c-royal-blue;
-    padding-left: $sidebar-width + $sidebar-padding;
 
 	&__wrapper {
         height: 100%;
-        padding-left: 10px;
+        padding-left: 20px;
 		position: relative;
 	}
 }

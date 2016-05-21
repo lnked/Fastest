@@ -1,0 +1,12 @@
+.box {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.4rem;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+    border: 1px solid $c-box-border-color;
+    background-color: $c-box-background;
+    color: $c-box-text-color;
+}

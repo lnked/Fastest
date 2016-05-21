@@ -9,12 +9,13 @@
     margin-right: -$sidebar-width;
     background-color: $c-sidebar-color;
 
-	&__trigger {
+	&__logo {
         width: 60px;
         height: 60px;
         display: block;
         cursor: pointer;
         position: relative;
+        z-index: 10;
         background: url(../images/logo.svg) 50% 50% no-repeat;
         background-size: 60px 60px;
     }

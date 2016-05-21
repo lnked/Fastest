@@ -4,14 +4,14 @@
 
 <div class="layout-wrapper">
 
-    <form action="" class="form auth" method="POST">
-        <header class="auth__header">
+    <form action="" class="form login" method="POST">
+        <header class="login__header">
             АВТОРИЗАЦИЯ
         </header>
 
-        <div class="auth__body">
+        <div class="login__body">
             
-            <div class="auth__row">
+            <div class="login__row">
                 <label class="form__label">
                     <span class="form__label__name">Логин</span>
                     <input name="login">
@@ -19,7 +19,7 @@
             </div>
             
             
-            <div class="auth__row">
+            <div class="login__row">
                 <label class="form__label">
                     <span class="form__label__name">Пароль</span>
                     <input type="password" name="password">
@@ -27,12 +27,12 @@
             </div>
         </div>
             
-        <div class="auth__row clearfix">
-            <div class="auth__col">
-                <a href="" class="auth__forgot-link">Забыли пароль?</a>
+        <div class="login__row clearfix">
+            <div class="login__col">
+                <a href="" class="login__forgot-link">Забыли пароль?</a>
             </div>
 
-            <div class="auth__col">
+            <div class="login__col">
                 @@include('./components/checkbox.html', {
                     "name": "save_me",
                     "value": "1",

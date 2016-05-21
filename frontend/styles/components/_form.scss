@@ -32,6 +32,10 @@ textarea {
         opacity: 0.4;
         cursor: default;
     }
+    
+    &::-moz-focus-inner { 
+        border: 0; 
+    }
 
     &:focus {
         outline: 0;
@@ -88,6 +92,7 @@ textarea {
             font-size: 1.4rem;
             font-weight: 400;
             line-height: 1;
+            user-select: none;
             letter-spacing: 0.01ex;
             margin-bottom: 5px;
         }

@@ -1,10 +1,10 @@
 .auth {
     width: 100%;
-    max-width: 380px;
+    max-width: 420px;
     position: absolute;
     left: 50%;
     top: 50%;
-    background-color: $c-auth-background;
+    background-color: $c-royal-blue-light;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     transform: translate(-50%, -50%);
     
@@ -13,10 +13,44 @@
         font-size: 1.8rem;
         color: $c-white;
         text-transform: uppercase;
-        background-color: $c-auth-header;
+        background-color: $c-royal-blue;
     }
 
     &__body {
-        padding: 20px 25px;
+        padding: 20px 0;
+    }
+
+    &__row {
+        clear: both;
+        padding: 0 25px;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__col {
+        width: 50%;
+        float: left;
+        line-height: 30px;
+        padding: 12px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            background-color: #fee;
+        }
+    }
+
+    &__forgot-link {
+        color: #fff;
+        font-size: 1.3rem;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

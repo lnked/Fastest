@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php
+/*
+ * This file is part of the {{ }} package.
+ *
+ * (c) Yo-An Lin <cornelius.howl@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ *
+ *
+ *  
+ *  php example/demo meta commit opt C valid-values
+ *
+ *  php example/demo meta commit opt c valid-values
+ *
+ *  php example/demo meta commit opt author suggestions
+ *
+ *  php example/demo meta commit arg 0 valid-values
+ *
+ */
+$loader = require 'vendor/autoload.php';
+$loader->add('DemoApp','tests');
+
+require 'tests/DemoApp/Application.php';
+require 'tests/DemoApp/Command/CommitCommand.php';
+require 'tests/DemoApp/Command/FooCommand.php';
+require 'tests/DemoApp/Command/AddCommand.php';
+require 'tests/DemoApp/Command/FooCommand/SubFooCommand.php';
+require 'tests/DemoApp/Command/ServerCommand.php';
+
+$app = new DemoApp\Application;
+
+
+
+
+// $app->runWithTry($argv);
+$app->run($argv);
+
+
+

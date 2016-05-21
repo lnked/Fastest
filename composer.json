@@ -1,0 +1,16 @@
+{
+    "name": "fast_cms/fast_cms",
+    "authors": [
+        {
+            "name": "Edik Bulikyan",
+            "email": "ed.proff@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "protected/vendor"
+    },
+    "require": {
+        "corneltek/pux": "^1.6",
+        "nikic/fast-route": "^1.0"
+    }
+}

@@ -1,0 +1,24 @@
+@@include('./components/meta.html', {
+	"title": "F\"CMS"
+})
+
+@@include('./popups/popup.html')
+
+@@include('./components/sidebar.html', {
+    "page": "users"
+})
+
+<div class="layout-wrapper">
+	@@include('./components/header.html', {
+		"current": "users"
+	})
+	
+    <div class="layout-content">
+        <div class="layout-content__wrapper">
+            
+        </div>
+    </div>
+
+</div>
+
+@@include('./components/scripts.html')

@@ -1,0 +1,14 @@
+{if $payment}
+<h3 class="checkout__form__title">Способ оплаты:</h3>
+<div class="checkout__form__content">
+    <div class="form__group clearfix">
+        {foreach $payment as $id => $method name=payment}
+        <label class="form__group__item">
+            <input type="radio" class="form__group__item__rb" name="payment" value="{$id}"{if $smarty.foreach.payment.first || $user.payment == $id} checked{/if}>
+            <span class="form__group__item__style"></span>
+            <span class="form__group__item__text">{$method}</span>
+        </label>
+        {/foreach}
+    </div>
+</div>
+{/if}

@@ -1,0 +1,49 @@
+@@include('./components/meta.html', {
+    "title": "F\"CMS"
+})
+
+<div class="layout-wrapper">
+    
+    <div class="layout-content layout-content_main">
+        <div class="layout-content__wrapper">
+            
+            <form action="" class="form auth" method="POST">
+                <header class="auth__header">
+                    АВТОРИЗАЦИЯ
+                </header>
+
+                <div class="auth__body">
+                    
+                    <div class="form__row">
+                        <label class="form__label">
+                            <span class="form__label__name">Логин</span>
+                            <input name="login">
+                        </label>
+                    </div>
+                    
+                    
+                    <div class="form__row">
+                        <label class="form__label">
+                            <span class="form__label__name">Пароль</span>
+                            <input type="password" name="password">
+                        </label>
+                    </div>
+                    
+                    <div class="form__row">
+                        @@include('./components/checkbox.html', {
+                            "name": "save_me",
+                            "value": "1",
+                            "title": "Запомнить меня"
+                        })
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn_block btn_large btn_primary">Войти</button>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+@@include('./components/scripts.html')

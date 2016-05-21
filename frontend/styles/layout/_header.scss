@@ -1,0 +1,21 @@
+.layout-header {
+    height: 60px;
+    background-color: $c-royal-blue;
+    padding-left: $sidebar-width + $sidebar-padding;
+
+	&__wrapper {
+        height: 100%;
+        padding-left: 10px;
+		position: relative;
+	}
+}
+
+@media only screen and (max-width: 1280px) {}
+@media only screen and (max-width: 1140px) {}
+@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 960px) {}
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 568px) {}
+@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 375px) {}
+@media only screen and (max-width: 320px) {}

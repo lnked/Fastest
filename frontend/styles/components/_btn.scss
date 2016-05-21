@@ -1,0 +1,36 @@
+.btn {
+    @extend %button;
+    height: 30px;
+    font-size: 1.4rem;
+    line-height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    &_block {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &_small {
+        height: 20px;
+        line-height: 20px;
+    }
+
+    &_medium {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    &_large {
+        height: 50px;
+        font-size: 1.7rem;
+        line-height: 50px;
+    }
+
+    &_primary {
+        color: #fff;
+        background-color: blue;
+    }
+}

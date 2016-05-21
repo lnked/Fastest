@@ -1,0 +1,75 @@
+::selection {
+	color: $select-color;
+	background-color: $select-background;
+	text-shadow: none;
+}
+
+svg {
+	shape-rendering: optimizeSpeed;
+}
+
+%button {
+	margin: 0;
+	border: none;
+	overflow: visible;
+	font: inherit;
+    text-transform: none;
+    display: inline-block;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0);
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	-webkit-appearance: none;
+	border-color: rgba(0, 0, 0, 0);
+	transition: border-color $a-time ease, background-color $a-time ease, color $a-time ease;
+}
+
+%clearfix {
+	zoom: 1;
+
+	&:after {
+		clear: both;
+		content: '';
+		line-height: 0;
+		display: table;
+	}
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+.image {
+	font: 0/0 a;
+	border: 0;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.is-show {
+	display: block;
+}
+
+.center {
+	text-align: center;
+}
+
+.vmcenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+
+a:focus {
+	outline: 0;
+}

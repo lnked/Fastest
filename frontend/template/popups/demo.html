@@ -1,0 +1,340 @@
+<div id="ngdialog8" class="ngdialog ngdialog-theme-default ng-scope" ng-controller="FirstDialogCtrl">
+	<div class="ngdialog-overlay"></div>
+	<div class="ngdialog-content">
+
+		<div class="ngdialog-message">
+			<h2>Native Angular.js solution</h2>
+			<div>With ngDialog you don't need jQuery or Bootstrap to create dialogs for <code>ng-app:</code></div>
+			<ul class="mt">
+				<li>Use it in controllers, factories or directives</li>
+				<li>Create your own directives</li>
+				<li>Style all UI and templates</li>
+				<li>Configure themes</li>
+				<li>Add animations and effects</li>
+			</ul>
+			<div class="mt">Module is shipped with both <code>ngDialog</code> service and default directive.</div>
+		</div>
+		<div class="ngdialog-buttons mt">
+			<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="next()">►</button>
+		</div>
+		
+		<div class="ngdialog-close"></div>
+	</div>
+</div>
+
+<script type="text/ng-template" id="firstDialog">
+	<div class="ngdialog-message">
+		<h2>Native Angular.js solution</h2>
+		<div>With ngDialog you don't need jQuery or Bootstrap to create dialogs for <code>ng-app:</code></div>
+		<ul class="mt">
+			<li>Use it in controllers, factories or directives</li>
+			<li>Create your own directives</li>
+			<li>Style all UI and templates</li>
+			<li>Configure themes</li>
+			<li>Add animations and effects</li>
+		</ul>
+		<div class="mt">Module is shipped with both <code>ngDialog</code> service and default directive.</div>
+	</div>
+	<div class="ngdialog-buttons mt">
+		<button type="button" class="ngdialog-button ngdialog-button-primary" ng-click="next()">►</button>
+	</div>
+</script>
+
+<script type="text/ng-template" id="secondDialog">
+	<div class="ngdialog-message">
+		<h2>And even more!</h2>
+		<ul class="mt">
+			<li>Load your templates as strings, ng-template tags or html partials</li>
+			<li>ngDialog.js is < 2kb when minified!</li>
+			<li>It has simple, extendable and elegant API ;)</li>
+		</ul>
+		<div class="mt">Spread a word about it:</div>
+	</div>
+	<div class="mt">
+		<a href="http://twitter.com/home?status=ngDialog.js - modal windows and popups provider for Angular.js applications, via @likeastore!+http://likeastore.github.io/ngDialog/" class="action-btn" ng-like>Tweet</a>
+		<a href="http://www.facebook.com/share.php?u=http://likeastore.github.io/ngDialog" class="action-btn" ng-like>Like</a>
+		<a href="https://github.com/likeastore/ngDialog#ngdialog" class="action-btn read" target="_blank">Read docs</a>
+	</div>
+</script>
+
+
+@keyframes ngdialog-fadeout {
+0% {
+opacity: 1;
+}
+
+100% {
+opacity: 0;
+}
+}
+
+@keyframes ngdialog-fadein {
+0% {
+opacity: 0;
+}
+
+100% {
+opacity: 1;
+}
+}
+
+.ngdialog,
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+.ngdialog {
+position: fixed;
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+z-index: 10000;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+}
+
+.ngdialog-overlay {
+position: fixed;
+background: rgba(0, 0, 0, 0.4);
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+-webkit-backface-visibility: hidden;
+-webkit-animation: ngdialog-fadein 0.5s;
+animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-overlay {
+-webkit-backface-visibility: hidden;
+-webkit-animation: ngdialog-fadeout 0.5s;
+animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-content {
+background: white;
+-webkit-backface-visibility: hidden;
+-webkit-animation: ngdialog-fadein 0.5s;
+animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-content {
+-webkit-backface-visibility: hidden;
+-webkit-animation: ngdialog-fadeout 0.5s;
+animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-close:before {
+font-family: 'Helvetica', Arial, sans-serif;
+content: '\00D7';
+cursor: pointer;
+}
+
+body.ngdialog-open {
+overflow: hidden;
+}
+
+
+////
+
+@-webkit-keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding-bottom: 160px;
+  padding-top: 160px;
+}
+
+.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content {
+  -webkit-animation: ngdialog-flyout .5s;
+  animation: ngdialog-flyout .5s;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  -webkit-animation: ngdialog-flyin .5s;
+  animation: ngdialog-flyin .5s;
+  background: #f0f0f0;
+  border-radius: 5px;
+  color: #444;
+  font-family: 'Helvetica',sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  width: 450px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close {
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+  background: transparent;
+  border-radius: 3px;
+  color: #bbb;
+  content: '\00D7';
+  font-size: 26px;
+  font-weight: 400;
+  height: 30px;
+  line-height: 26px;
+  position: absolute;
+  right: 3px;
+  text-align: center;
+  top: 3px;
+  width: 30px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:hover:before,
+.ngdialog.ngdialog-theme-default .ngdialog-close:active:before {
+  color: #777;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-message {
+  margin-bottom: .5em;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input {
+  margin-bottom: 1em;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"],
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"] {
+  background: #fff;
+  border: 0;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 .25em;
+  min-height: 2.5em;
+  padding: .25em .67em;
+  width: 100%;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-input textarea:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="text"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="password"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="email"]:focus,
+.ngdialog.ngdialog-theme-default .ngdialog-input input[type="url"]:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #8dbdf1;
+  box-shadow: inset 0 0 0 2px #8dbdf1;
+  outline: none;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons {
+  *zoom: 1;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-buttons:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button {
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  float: right;
+  font-family: inherit;
+  font-size: .8em;
+  letter-spacing: .1em;
+  line-height: 1em;
+  margin: 0 0 0 .5em;
+  padding: .75em 2em;
+  text-transform: uppercase;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+  -webkit-animation: ngdialog-pulse 1.1s infinite;
+  animation: ngdialog-pulse 1.1s infinite;
+  outline: none;
+}
+
+@media (max-width: 568px) {
+  .ngdialog.ngdialog-theme-default .ngdialog-button:focus {
+    -webkit-animation: none;
+    animation: none;
+  }
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary {
+  background: #3288e6;
+  color: #fff;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary {
+  background: #e0e0e0;
+  color: #777;
+}

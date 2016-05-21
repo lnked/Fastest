@@ -1,0 +1,134 @@
+@keyframes nprogress-spinner{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.menu-scroller {
+    top: 84px;
+    height: 30px;
+    z-index: 21;
+    display: none;
+}
+
+.menu-scroller, .menu-scroller:before, .menu-wrapper {
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.menu {
+    padding: 0 0 20px;
+    z-index: 20;
+    position: absolute;
+    margin-top: 18px;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.menu-wrapper {
+    top: 83px;
+    bottom: 71px;
+    overflow: hidden;
+    z-index: 1;
+}
+.menu-scroller, .menu-scroller:before, .menu-wrapper {
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.menu__item:first-child {
+    margin: 0;
+}
+.menu__item {
+    margin: 16px 0 0;
+    position: relative;
+    cursor: pointer;
+    line-height: 70px;
+    text-align: center;
+}
+
+.menu__item__link {
+    font-size: 0;
+    outline: 0;
+}
+.menu__item__link, .nav__top__userbar__grey-link {
+    color: #9da8ae;
+    text-decoration: none;
+}
+.menu__item-selected .menu__item__link, html.no-touch .menu__item:hover .menu__item__link, html.touch .menu__item:active .menu__item__link {
+    color: #acadaf;
+}
+
+.menu__item__icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 0 auto 6px;
+}
+
+.menu:not(.menu-no-selected) .menu__item-selected .menu__item__title {
+    color: #fff;
+    font-weight: 700;
+}
+.menu__item__title {
+    text-align: center;
+    line-height: 13px;
+    font-size: 11px;
+    width: 60px;
+    margin: 0 auto;
+}
+
+.nav__notifications__counter {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 700;
+    background: #ff7779;
+    color: #fff;
+    border-radius: 20px;
+    min-width: 16px;
+    padding: 3px;
+    line-height: 1;
+    right: -7px;
+    top: -2px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.nav__notifications__counter, .nav__top__userbar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.menu__item-selected .nav__top__userpic__loader {
+    opacity: 1;
+}
+.nav__top__userpic__loader {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+}
+
+.nav__top__userpic__loader.stopped .spinner-icon, html.no-touch .left-menu-fake {
+    display: none;
+}
+.nav__top__userpic__loader .spinner-icon {
+    width: 26px;
+    height: 26px;
+    border-width: 4px;
+    top: -2px;
+    position: absolute;
+    left: -2px;
+}
+.spinner-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-top-color: #158FD2;
+    border-left-color: #158FD2;
+    border-radius: 100%;
+    animation: nprogress-spinner .9s linear infinite;
+}

@@ -34,24 +34,22 @@ $c-form-field:                  #eee;
 // $c-sidebar-color:               #4cb976;
 // $c-sidebar-color:               #e0264a;
 
-$c-button-default-color:        #fff;
-$c-button-default-background:   #002366;
+// colors
 
-$c-button-primary-color:        #fff;
-$c-button-primary-background:   #002366;
+$c-default-color:               #000;
+$c-default-background:          #ccc;
 
+$c-primary-color:               #fff;
+$c-primary-background:          #002366;
 
+$c-success-color:               #fff;
+$c-success-background:          #5cb85c;
 
-// hue, saturation, lightness
+$c-info-color:                  #fff;
+$c-info-background:             #5bc0de;
 
-// $body-background-offset   : mix($lpblue, #fff, 5%) !default;
-// $card-figure-bg           : #f4fbfe !default;
-// $details-panel-bg         : mix($red, #fff, 15%) !default;
-// $new-header-grey-shadow   : rgba(3, 46, 92, 0.12);
-// $responsive-nav-bg        : mix($linkblue, #fff, 3%);
-// $responsive-nav-subnav-bg : mix($linkblue, #fff, 6%);
+$c-warning-color:               #fff;
+$c-warning-background:          #f0ad4e;
 
-// $highlight-error          : lighten($red, 25%) !default;
-// $highlight-success        : lighten($green, 45%) !default;
-// $highlight-warning        : lighten($yella, 20%) !default;
-// $highlight-announcement   : mix($linkblue, #fff, 25%) !default;
+$c-danger-color:                #fff;
+$c-danger-background:           #d9534f;

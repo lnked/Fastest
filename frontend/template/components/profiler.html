@@ -1,0 +1,202 @@
+<div id="pk-profiler" class="pf-profiler"> <div class="pf-navbar"> <ul class="pf-navbar-nav"> <li><a title="System Information"> <div class="pf-icon-large pf-icon-pagekit"></div> </a> <script id="panel-system" type="text/template"><h1>Information</h1>
+
+    <h2>System</h2>
+    <table class="pf-table pf-table-dropdown">
+        <tbody>
+        <tr>
+            <td>Pagekit</td>
+            <td>{{ version }}</td>
+        </tr>
+        <tr>
+            <td>Server</td>
+            <td>{{ server }}</td>
+        </tr>
+        <tr>
+            <td>Useragent</td>
+            <td>{{ useragent }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>PHP</h2>
+    <table class="pf-table pf-table-dropdown">
+        <tbody>
+        <tr>
+            <td>PHP</td>
+            <td>{{ phpversion }}</td>
+        </tr>
+        <tr>
+            <td>PHP SAPI</td>
+            <td>{{ sapi_name }}</td>
+        </tr>
+        <tr>
+            <td>System</td>
+            <td>{{ php }}</td>
+        </tr>
+        <tr>
+            <td>Extensions</td>
+            <td>{{ extensions }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Database</h2>
+    <table class="pf-table pf-table-dropdown">
+        <tbody>
+        <tr>
+            <td>Driver</td>
+            <td>{{ dbdriver }}</td>
+        </tr>
+        <tr>
+            <td>Version</td>
+            <td>{{ dbversion }}</td>
+        </tr>
+        <tr>
+            <td>Client</td>
+            <td>{{ dbclient }}</td>
+        </tr>
+        </tbody>
+    </table></script></li><li><a title="Events"><span class="pf-icon pf-icon-events"></span> Events</a> <script id="panel-events" type="text/template"><h1>Events</h1>
+
+    <p v-if="!called && !notcalled">
+        <em>No events have been recorded. Are you sure that debugging is enabled in the kernel?</em>
+    </p>
+
+    <template v-if="called">
+        <h2>Called Listeners</h2>
+
+        <table class="pf-table">
+            <tbody>
+            <tr>
+                <th>Event name</th>
+                <th>Priority</th>
+                <th>Listener</th>
+            </tr>
+            <tr v-for="listener in called">
+                <td><code>{{ listener.event }}</code></td>
+                <td>{{ listener.priority }}</td>
+                <td v-if="listener.type === 'Closure'">
+                    <a :href="listener.link" v-if="listener.link">{{ listener.relative }}</a>
+                    <span v-else>{{ listener.relative }}</span>
+                    ({{ listener.line }} - {{ listener.endline }})
+                </td>
+                <td v-if="listener.type === 'Function'">
+                    <a :href="listener.link" v-if="listener.link">{{ listener.function }}</a>
+                    <span v-else>{{ listener.function }}</span>
+                </td>
+                <td v-if="listener.type === 'Method'">
+                    <a :href="listener.link" v-if="listener.link"><abbr :title="listener.class">{{ listener.class | short }}</abbr>::{{ listener.method }}</a>
+                    <span v-else><abbr :title="listener.class">{{ listener.class | short }}</abbr>::{{ listener.method }}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </template>
+    <template v-if="notcalled">
+
+        <h2>Not Called Listeners</h2>
+
+        <table class="pf-table">
+            <tbody>
+            <tr>
+                <th>Event name</th>
+                <th>Priority</th>
+                <th>Listener</th>
+            </tr>
+            <tr v-for="listener in notcalled">
+                <td><code>{{ listener.event }}</code></td>
+                <td>{{ listener.priority }}</td>
+                <td v-if="listener.type === 'Closure'">
+                    <a :href="listener.link" v-if="listener.link">{{ listener.relative }}</a>
+                    <span v-else>{{ listener.relative }}</span>
+                    ({{ listener.line }} - {{ listener.endline }})
+                </td>
+                <td v-if="listener.type === 'Function'">
+                    <a :href="listener.link" v-if="listener.link">{{ listener.function }}</a>
+                    <span v-else>{{ listener.function }}</span>
+                </td>
+                <td v-if="listener.type === 'Method'">
+                    <a :href="listener.link" v-if="listener.link"><abbr :title="listener.class">{{ listener.class | short }}</abbr>::{{ listener.method }}</a>
+                    <span v-else><abbr :title="listener.class">{{ listener.class | short }}</abbr>::{{ listener.method }}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </template></script></li><li><a title="Routes"><span class="pf-icon pf-icon-routes"></span>Routes</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Route</td> <td>@site/settings</td> </tr> <tr> <td>Path</td> <td>/admin/site/settings </td> </tr> <tr> <td>Controller</td> <td><abbr title="Pagekit\Site\Controller\NodeController::settingsAction">NodeController::settingsAction</abbr></td> </tr> </tbody> </table> </div> <script id="panel-routes" type="text/template"><h1>Routes</h1>
+    <table class="pf-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Path</th>
+                <th>Controller</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="r in routes" :class="{ 'pf-active': r.name == route }">
+                <td>{{ r.name }}</td>
+                <td>{{ r.path }} {{ r.methods | str }}</td>
+                <td><abbr :title="r.controller">{{ r.controller | short }}</abbr></td>
+            </tr>
+        </tbody>
+    </table></script></li><li><a title="Time"><span class="pf-icon pf-icon-time"></span>294.29ms</a></li><li><a title="Memory"><span class="pf-icon pf-icon-memory"></span> 2MB</a></li><li><a title="Database" class="pf-parent"><span class="pf-icon pf-icon-database"></span>6</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Queries</td> <td>6</td> </tr> <tr> <td>Time</td> <td>5.94ms</td> </tr> <tr> <td>Driver</td> <td>pdo_mysql</td> </tr> </tbody> </table> </div> <script id="panel-database" type="text/template"><h1>Queries</h1>
+
+    <p v-show="!nb_statements">
+        <em>No queries.</em>
+    </p>
+
+    <div v-for="statement in statements">
+
+        <pre><code>{{ statement.sql }}</code></pre>
+
+        <p class="pf-submenu">
+            <span>{{ statement.duration_str }}</span>
+            <span>{{ statement.params | json }}</span>
+        </p>
+
+    </div></script></li><li><a title="User"><span class="pf-icon pf-icon-auth pf-parent"></span>admin</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Username</td> <td>admin</td> </tr> <tr> <td>Roles</td> <td>{
+  "2": "Authenticated",
+  "3": "Administrator"
+}</td> </tr> <tr> <td>Authenticated</td> <td>yes</td> </tr> <tr> <td>Class</td> <td>Pagekit\User\Model\User</td> </tr> </tbody> </table> </div></li><li><a title="Log">Log (1)</a> <script id="panel-log" type="text/template"><h1>Logs</h1>
+
+    <table class="pf-table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="record in records">
+                <td>{{ record.message }}</td>
+                <td>{{ record.level_name }}</td>
+            </tr>
+        </tbody>
+    </table></script></li><li><a title="Requests">Requests</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Request Id</td> <td>93e99449b207402dd0bd1d714d4b805fb2ae9847</td> </tr> </tbody> </table> </div> <script id="panel-requests" type="text/template"><h1>Requests</h1>
+    <table class="pf-table">
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>Method</th>
+                <th>URL</th>
+                <th>Time</th>
+                <th>Request Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr :class="{'pf-active': $root.request.id === $root.data.__meta.id}">
+                <td>{{ $root.request.ip }}</td>
+                <td>{{ $root.request.method }}</td>
+                <td>{{ $root.request.uri }}</td>
+                <td>{{ $root.request.datetime }}</td>
+                <td><a @click.prevent="$root.load($root.request.id)">{{ $root.request.id }}</a></td>
+            </tr>
+            <tr v-for="request in requests" :class="{'pf-active': request.id === $root.data.__meta.id}">
+                <td>{{ request.ip }}</td>
+                <td>{{ request.method }}</td>
+                <td>{{ request.uri }}</td>
+                <td>{{ request.datetime }}</td>
+                <td><a @click.prevent="$root.load(request.id)">{{ request.id }}</a></td>
+            </tr>
+        </tbody>
+    </table></script></li> </ul> <a class="pf-close"></a> </div> <div class="pf-profiler-panel" style="display: none; height: 355px;"></div>
+</div>

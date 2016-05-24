@@ -5,15 +5,15 @@
     line-height: 30px;
     padding-left: 15px;
     padding-right: 15px;
-    color: $c-button-default-color;
-    background-color: $c-button-default-background;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+    color: $c-default-color;
+    background-color: $c-default-background;
 
     &:active {
         box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.1);
     }
     
-    &_block {
+    &_wide {
         width: 100%;
         text-align: center;
         padding-left: 0;
@@ -36,8 +36,5 @@
         line-height: 50px;
     }
 
-    &_primary {
-        color: $c-button-primary-color;
-        background-color: $c-button-primary-background;
-    }
+    @include variations();
 }

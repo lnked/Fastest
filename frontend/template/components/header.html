@@ -9,6 +9,30 @@
 		    <span class="nav__item"><a href="/markup/shop.html" class="nav__item__link@@if (current == 'shop'){ nav__item__link_current}">Магазин</a></span>
 		    <span class="nav__item"><a href="/markup/system.html" class="nav__item__link@@if (current == 'system'){ nav__item__link_current}">Система</a></span>
 		</nav>
+		
+		<img src="/images/user.svg" width="39px" height="48px" style="float: right; position: absolute; right: 210px; top: 20px;" alt="">
+		<img src="/images/airplane.svg" width="30" height="26" style="float: right; position: absolute; right: 110px; top: 20px;" alt="">
+		<img src="/images/notifications.svg" width="23" height="24" style="float: right; position: absolute; right: 10px; top: 20px;" alt="">
+		
+		<div class="notifier">
+			<a class="notifier__toggle" href="#" data-reactid=".0.0">
+				<b class="badge badge_red notifier__count">3</b>
+			</a>
+		</div>
+
+		<div class="header__profile dropdown">
+			<a class="header__profile-link dropdown__toggle" href="#"><figure class="user-pic user-pic_xsmall"><img src="http://localhost:3000/uploads/user/photo/54/xsmall_dolan.jpg" alt="Xsmall dolan"></figure>
+				<span>Skyla</span>
+			</a>
+			<div class="dropdown__menu dropdown__menu_full" style="display: none;">
+				<a class="dropdown__menu-item" href="/d/users/edit">Настройки</a>
+				<a class="dropdown__menu-item" href="/student/profile_employee">Профиль</a>
+				<a class="dropdown__menu-item" href="#">Помощь</a>
+				<a class="dropdown__menu-item dropdown__menu-item_separated" rel="nofollow" data-method="delete" href="/d/users/sign_out"><span>Выход</span>
+					<i class="lcm-icon lcm-icon_maximize"></i>
+				</a>
+			</div>
+        </div>
 
 	</div>
 </header>

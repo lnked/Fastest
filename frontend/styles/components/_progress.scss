@@ -1,0 +1,85 @@
+.progress
+{
+  font: 12px Arial, Tahoma, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress progress
+{
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: -777px;
+}
+
+.progress-bar
+{
+  overflow: hidden;
+  background: #ac92ec;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-value
+{
+  color: #333;
+  display: block;
+  line-height: 21px;
+  text-align: center;
+}
+
+.progress-bg
+{
+  background: #e6e9ed;
+  position: relative;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar:after
+{
+  background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes progress_bar {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -40px 0;
+  }
+}
+
+.progress-bar
+{
+  transition: width 1s linear;
+}
+
+.progress-bar:after
+{
+  animation: progress_bar 0.8s linear infinite;
+}
+
+@for $i from 0 through 100 {
+  .progress progress[value="#{$i}"]
+  {
+    & + .progress-value:before { content : '#{$i}%' }
+    & ~ .progress-bg .progress-bar { width: $i * 1% }
+  }
+}

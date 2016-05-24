@@ -1,0 +1,62 @@
+# encoding: UTF-8
+
+# Module
+
+{
+    "identity": "5eb63bbbe01eeed093cb22bb8f5acdc3",
+    "event": "Added to Cart",
+    "details": {
+        "itemId": "THX-1138",
+        "cartId": "LUH-3417"
+    }
+}
+
+{
+    "ip": "10.0.0.1", 
+    "url": "https://sir.tracksalot.com/api/v1/event",
+    "referer": "https://a.webstore.com/cart/add", 
+    "userAgent": "Mozilla/5.0 (iPad; CPU OS 9_2_1 ... Mobile/13D15",
+    "eventBody": {
+        "identity": "5eb63bbbe01eeed093cb22bb8f5acdc3",
+        "event": "Added to Cart", 
+        "details": {
+            "itemId": "THX-1138",
+            "cartId": "LUH-3417"
+        } 
+    }
+}
+
+# <table_structure name="db__blc_zone">
+#   <field field="id" type="int(10) unsigned" null="NO" key="PRI" default="<null>" extra="auto_increment" />
+#   <field field="tid" type="int(11)" null="NO" key="" default="<null>" extra="" />
+#   <field field="name" type="varchar(255)" null="NO" key="" default="<null>" extra="" />
+#   <field field="sys_name" type="varchar(255)" null="NO" key="" default="<null>" extra="" />
+#   <field field="visible" type="tinyint(3) unsigned" null="NO" key="MUL" default="0" extra="" />
+
+#   <options name="db__blc_zone" engine="MyISAM" version="10" row_format="Dynamic" rows="4" avg_row_length="34" data_length="156" max_data_length="281474976710655" index_length="3072" data_free="20" create_time="2016-04-22 17:16:28" update_time="2016-05-11 03:38:45" collation="utf8_general_ci" create_options="" comment="" />
+# </table_structure>
+
+# <table_structure name="db__cp_tasks">
+#   <field field="id" type="int(11) unsigned" null="NO" key="PRI" default="<null>" extra="auto_increment" />
+#   <field field="operation" type="varchar(255)" null="NO" key="" default="" extra="" />
+#   <field field="module" type="varchar(32)" null="YES" key="" default="<null>" extra="" />
+#   <field field="action" type="varchar(32)" null="YES" key="" default="<null>" extra="" />
+#   <field field="element" type="int(11) unsigned" null="YES" key="" default="<null>" extra="" />
+
+#   <options name="db__cp_tasks" engine="MyISAM" version="10" row_format="Dynamic" rows="0" avg_row_length="0" data_length="0" max_data_length="281474976710655" index_length="1024" data_free="0" create_time="2016-04-22 17:16:28" update_time="2016-04-22 17:16:28" collation="utf8_general_ci" create_options="" comment="" />
+# </table_structure>
+
+# <table_structure name="db__cp_structure">
+#   <field field="id" type="int(11)" null="NO" key="PRI" default="<null>" extra="auto_increment" />
+#   <field field="pid" type="int(11)" null="YES" key="MUL" default="0" extra="" />
+#   <field field="name" type="varchar(255)" null="NO" key="MUL" default="<null>" extra="" />
+#   <field field="sys_name" type="varchar(255)" null="NO" key="" default="<null>" extra="" />
+#   <field field="icon" type="varchar(32)" null="NO" key="" default="<null>" extra="" />
+#   <field field="dir" type="varchar(32)" null="NO" key="" default="<null>" extra="" />
+#   <field field="groups" type="varchar(12)" null="NO" key="" default="1,10" extra="" />
+#   <field field="bonds" type="varchar(32)" null="NO" key="MUL" default="top" extra="" />
+#   <field field="visible" type="tinyint(4)" null="NO" key="MUL" default="1" extra="" />
+#   <field field="ord" type="int(11)" null="NO" key="MUL" default="<null>" extra="" />
+
+#   <options name="db__cp_structure" engine="MyISAM" version="10" row_format="Dynamic" rows="60" avg_row_length="69" data_length="4184" max_data_length="281474976710655" index_length="17408" data_free="20" create_time="2016-04-22 17:16:28" update_time="2016-05-11 16:08:49" collation="utf8_general_ci" create_options="" comment="" />
+# </table_structure>

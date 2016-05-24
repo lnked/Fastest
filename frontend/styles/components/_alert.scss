@@ -1,0 +1,11 @@
+.alert {
+    display: block;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    color: $c-default-color;
+    background-color: $c-default-background;
+
+    @include variations();
+}

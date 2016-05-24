@@ -1,0 +1,16 @@
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 10px;
+    color: $c-default-color;
+    background-color: $c-default-background;
+
+    @include variations();
+}

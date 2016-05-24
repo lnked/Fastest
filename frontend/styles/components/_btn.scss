@@ -5,6 +5,8 @@
     line-height: 30px;
     padding-left: 15px;
     padding-right: 15px;
+    color: $c-button-default-color;
+    background-color: $c-button-default-background;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
 
     &:active {
@@ -35,7 +37,7 @@
     }
 
     &_primary {
-        color: #fff;
-        background-color: blue;
+        color: $c-button-primary-color;
+        background-color: $c-button-primary-background;
     }
 }

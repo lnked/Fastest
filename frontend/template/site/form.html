@@ -1,0 +1,36 @@
+@@include('../components/meta.html', {
+    "title": "F\"CMS"
+})
+
+@@include('../popups/popup.html')
+
+@@include('../components/sidebar.html', {
+    "page": "site"
+})
+
+<div class="layout-wrapper">
+    <div class="layout-content">
+        @@include('../components/header.html', {
+            "current": "site"
+        })
+    
+        <div class="layout-content__wrapper">
+            <div class="box">
+                module
+            </div>
+            
+            @@include('../components/dropzone.html', {
+                "type": "collection",
+                "title": "Выбрать изображение"
+            })
+            
+            @@include('../components/dropzone.html', {
+                "title": "Выбрать изображение"
+            })
+
+        </div>
+    </div>
+
+</div>
+
+@@include('../components/scripts.html')

@@ -1,0 +1,47 @@
+.dropzone {
+    color: $c-light-text-color;
+    padding: 30px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px dashed $c-light-border-color;
+    transition: box-shadow $a-long-time ease, border-color $a-long-time ease;
+
+    &.active {
+        box-shadow: 0 0px 15px 0 rgba(65, 105, 225, .2);
+        border-color: $c-royal-blue-light;
+    }
+
+    &__input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: 100;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &__icon {
+        height: 41px;
+        opacity: .15;
+        display: block;
+        margin-bottom: 15px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url(/images/picture-photo.svg);
+        background-size: 42px 36px;
+
+        &_collection {
+            background-image: url(/images/picture-collection.svg);
+            background-size: 44px 41px;
+        }
+    }
+
+    &__title {
+        display: block;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}

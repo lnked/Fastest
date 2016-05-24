@@ -1,3 +1,32 @@
+input[type="checkbox"]:not(:disabled), input[type="radio"]:not(:disabled) {
+    cursor: pointer;
+}
+input[type="checkbox"] {
+    border-radius: 2px;
+}
+input[type="radio"], input[type="checkbox"] {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #D5D5D5;
+    overflow: hidden;
+    margin-top: -4px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    outline: 0;
+    background: #fff;
+}
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;
+}
+input, select, textarea {
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    font: inherit;
+    color: inherit;
+}
+
 // input[type="radio"]:checked, input[type="checkbox"]:checked, input[type=checkbox]:indeterminate {
 //     border-color: rgba(0, 0, 0, 0);
 //     background: #3DC372;
@@ -32,53 +61,6 @@
 //     border-radius: 0;
 //     font: inherit;
 //     color: inherit;
-// }
-
-// input[type="radio"] {
-//     -webkit-appearance: radio;
-//     box-sizing: border-box;
-// }
-
-// input[type="radio"], input[type="checkbox"] {
-//     background-color: initial;
-//     margin: 3px 0.5ex;
-//     padding: initial;
-//     border: initial;
-// }
-
-// input {
-//     -webkit-appearance: textfield;
-//     background-color: white;
-//     border-image-source: initial;
-//     border-image-slice: initial;
-//     border-image-width: initial;
-//     border-image-outset: initial;
-//     border-image-repeat: initial;
-//     -webkit-rtl-ordering: logical;
-//     -webkit-user-select: text;
-//     cursor: auto;
-//     padding: 1px;
-//     border-width: 2px;
-//     border-style: inset;
-//     border-color: initial;
-// }
-
-// input, textarea, keygen, select, button {
-//     text-rendering: auto;
-//     color: initial;
-//     letter-spacing: normal;
-//     word-spacing: normal;
-//     text-transform: none;
-//     text-indent: 0px;
-//     text-shadow: none;
-//     display: inline-block;
-//     text-align: start;
-//     margin: 0em 0em 0em 0em;
-//     font: 11px BlinkMacSystemFont;
-// }
-
-// input, textarea, keygen, select, button, meter, progress {
-//     -webkit-writing-mode: horizontal-tb;
 // }
 
 $radio-size: 18px;

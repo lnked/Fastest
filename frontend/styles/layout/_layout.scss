@@ -3,6 +3,11 @@
 	height: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
+
+    &_auth {
+        background: #000 url(/images/auth-background.jpg) 50% 50% no-repeat;
+        background-size: cover;
+    }
 }
 
 @media only screen and (max-width: 1280px) {}

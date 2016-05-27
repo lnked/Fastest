@@ -17,6 +17,50 @@
         <div class="layout-content__wrapper">
             
             <div class="box">
+                
+                <div class="form__row">
+                    <select name="">
+                        <option value="1">lorem</option>
+                        <option value="2">lorem</option>
+                        <option value="3">lorem</option>
+                        <option value="4">lorem</option>
+                        <option value="5">lorem</option>
+                    </select>
+                </div>
+                
+                <div class="form__row">
+                    <select name="" multiple>
+                        <option value="1">lorem</option>
+                        <option value="2">lorem</option>
+                        <option value="3">lorem</option>
+                        <option value="4">lorem</option>
+                        <option value="5">lorem</option>
+                    </select>
+                </div>
+
+                <div class="form__row">
+                    <select name="" disabled>
+                        <option value="1">lorem</option>
+                        <option value="2">lorem</option>
+                        <option value="3">lorem</option>
+                        <option value="4">lorem</option>
+                        <option value="5">lorem</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <nav class="pagination" data-pagination='{"currentPage":1, "pages":5}'></nav>
+                <nav class="pagination" data-pagination='{"displayedPages":5}'></nav>
+                <nav class="pagination" data-pagination='{"items":200, "itemsOnPage":10}'></nav>
+            </div>
+
+            <div class="box box_primary">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit in libero vitae error, dolore autem voluptates sint nam, unde ducimus animi voluptatum dignissimos quae! Odit, iure. Officiis, maxime pariatur quae.
+            </div>
+
+            <div class="box box_secondary">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit in libero vitae error, dolore autem voluptates sint nam, unde ducimus animi voluptatum dignissimos quae! Odit, iure. Officiis, maxime pariatur quae.
             </div>
 
@@ -30,6 +74,13 @@
                 <span class="label label_danger">Danger</span>
                 
                 <br><br>
+
+                <span class="badge badge_default">1</span>
+                <span class="badge badge_primary">2</span>
+                <span class="badge badge_success">3</span>
+                <span class="badge badge_info">4</span>
+                <span class="badge badge_warning">5</span>
+                <span class="badge badge_danger">6</span>
 
                 <span class="badge badge_default">Default</span>
                 <span class="badge badge_primary">Primary</span>
@@ -86,6 +137,101 @@
                     <progress max="100" value="100"></progress>
                     <div class="progress-value"></div>
                     <div class="progress-bg"><div class="progress-bar"></div></div>
+                </div>
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Widgets Sold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Name</th>
+                                <th>Job Position</th>
+                                <th>Since</th>
+                                <th class="text-right">Salary</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td>Andrew Mike</td>
+                                <td>Develop</td>
+                                <td>2013</td>
+                                <td class="text-right">&euro; 99,225</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td>John Doe</td>
+                                <td>Design</td>
+                                <td>2012</td>
+                                <td class="text-right">&euro; 89,241</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td>Alex Mike</td>
+                                <td>Design</td>
+                                <td>2010</td>
+                                <td class="text-right">&euro; 92,144</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                        <i class="fa fa-user"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
             </div>

@@ -1,0 +1,12 @@
+@keyframes nprogress-spinner{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.spinner-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-top-color: $c-royal-blue-light;
+    border-left-color: $c-royal-blue-light;
+    border-radius: 100%;
+    animation: nprogress-spinner .9s linear infinite;
+}

@@ -1,12 +1,28 @@
 .box {
     width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-    padding: 15px 20px;
     font-size: 1.4rem;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 35px;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
-    border: 1px solid $c-box-border-color;
-    background-color: $c-box-background;
-    color: $c-box-text-color;
+    color: $c-box-text-color-default;
+    background-color: $c-box-background-default;
+    box-shadow: $c-box-box-shadow-default;
+    border: 1px solid $c-box-border-color-default;
+    
+    &__border {
+        border-bottom: 1px solid $c-box-border-inner-default;
+    }
+
+    &_primary {
+        color: $c-box-text-color-primary;
+        border: 1px solid $c-box-border-color-primary;
+        background-color: $c-box-background-primary;
+    }
+
+    &_secondary {
+        color: $c-box-text-color-secondary;
+        border: 1px solid $c-box-border-color-secondary;
+        background-color: $c-box-background-secondary;
+    }
 }

@@ -1,7 +1,7 @@
 .label {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
+    display: inline-block;
+    padding: 4px 7px 5px;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
@@ -10,6 +10,6 @@
     border-radius: .25em;
     color: $c-default-color;
     background-color: $c-default-background;
-
+    @include elementShadow(1);
     @include variations();
 }

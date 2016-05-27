@@ -1,33 +1,71 @@
 $select-color: #fff;
 $select-background: #097dc5;
 
-$placeholder-color: #000;
-$placeholder-opacity: .5;
+$placeholder-color: #A9A9A9;
+$placeholder-opacity: 1;
 
-$body-background:               #F7F7F7 !default;
+// $body-background:               #ececec !default;
+$body-background:               #f4f7f9 !default;
 $color-text:                    #181818;
-$font-family:                   'Open Sans', sans-serif;
+$font-family:                   "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 $sidebar-width:                 80px;
 $sidebar-padding:               0;
 
-$c-box-background:              #fff;
-$c-box-border-color:            #e5e5e5;
-$c-box-text-color:              #555;
+$c-box-background-default:      #f5f5f5;
+$c-box-border-color-default:    darken($c-box-background-default, 5%);
+$c-box-text-color-default:      #809098;
+$c-box-border-inner-default:    #eaeef1;
+
+$c-box-background-default:      #fff;
+$c-box-border-color-default:    darken($c-box-background-default, 5%);
+$c-box-text-color-default:      #444;
+$c-box-box-shadow-default:      0px 3px 25px 0px rgba(16,51,74,0.1);
+
+$c-box-background-primary:      #ebf7fd;
+$c-box-border-color-primary:    darken($c-box-background-primary, 5%);
+$c-box-text-color-primary:      #2d7091;
+
+$c-box-background-secondary:    #E4E4E4;
+$c-box-border-color-secondary:  darken($c-box-background-secondary, 5%);
+$c-box-text-color-secondary:    #444;
+
+// $c-sidebar-color:               #1B3446;
+$c-sidebar-color:               #fff;
+$c-sidebar-color-dark:          #162b3a;
+$c-sidebar-color-light:         #224357;
+$c-sidebar-shadow:              1px 0 8px rgba(0, 0, 0, .1);
+
+$c-form-field-color-default:    #3a4d57;
+$c-form-field-border-default:   #d8dee1;
+$c-form-field-border-focus:     #66afe9;
+// $c-form-field-shadow:           0 0 2px 1px rgba(16,51,74,0.1);
+$c-form-field-shadow:           inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
 
 $c-white:                       #fff;
 $c-black:                       #121212;
 $c-light-text-color:            #aaa;
 $c-light-border-color:          #DCD7D7;
-$c-sidebar-color:               #1B3446;
-$c-sidebar-color-dark:          #162b3a;
-$c-sidebar-color-light:         #224357;
 $c-auth-background:             #3f93e2;
 $c-auth-header:                 #3f9322;
 $c-yellow:                      #ffd530;
 $c-royal-blue:                  #002366;
 $c-royal-blue-light:            #4169E1;
 $c-yellow-light:                #EFF8C7;
-$c-form-field:                  #eee;
+
+// yellow         ffd200
+// orange         f5683d
+// green          01ceb8
+// brown          80736c
+// cian           34d5db
+
+// text        6e6c7a
+// gray        d0cedb
+// lime        76e38d
+// light-blue  7dc3f3
+// brown       f2d28e
+// blue        7d9cf3
+// rows        8b79f8
+// rows-dark   998cf9
 
 // $c-sidebar-color:               #ffd34a;
 // $c-sidebar-color:               #ffe18f;
@@ -37,19 +75,32 @@ $c-form-field:                  #eee;
 // colors
 
 $c-default-color:               #000;
-$c-default-background:          #ccc;
+$c-default-background:          #f0f0f0;
 
 $c-primary-color:               #fff;
-$c-primary-background:          #002366;
+$c-primary-background:          #2A96E8;
 
 $c-success-color:               #fff;
 $c-success-background:          #5cb85c;
 
 $c-info-color:                  #fff;
-$c-info-background:             #5bc0de;
+$c-info-background:             #45C4EA;
 
 $c-warning-color:               #fff;
-$c-warning-background:          #f0ad4e;
+$c-warning-background:          #f69220;
 
 $c-danger-color:                #fff;
-$c-danger-background:           #d9534f;
+$c-danger-background:           #ee4037;
+
+$c-yellow:                      #f9e97d;
+$c-orange-light:                #faad40;
+$c-orange:                      #f69220;
+$c-red:                         #ee4037;
+$c-red-dark:                    #c63a28;
+$c-purple:                      #8c2b8a;
+$c-purple-dark:                 #9d2063;
+$c-pink:                        #e82b7b;
+$c-green:                       #009247;
+$c-green-light:                 #b8d374;
+$c-blue:                        #1e76ba;
+$c-blue-light:                  #8fcfeb;

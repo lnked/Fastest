@@ -15,7 +15,35 @@
         })
     
         <div class="layout-content__wrapper">
-            asd    
+            
+            <div class="box">
+                <ul class="dropdown-menu">
+                    <li><a href="?dispatch=orders.update_status&id=56&status=P&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'p', '#97cf4d');" data-ca-event="ce.update_object_status_callback">Обработан</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=C&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'c', '#97cf4d');" data-ca-event="ce.update_object_status_callback">Выполнен</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=O&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'o', '#ff9522');" data-ca-event="ce.update_object_status_callback">Открыт</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=F&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'f', '#ff5215');" data-ca-event="ce.update_object_status_callback">Неудача</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=D&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'd', '#ff5215');" data-ca-event="ce.update_object_status_callback">Отклонен</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=B&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'b', '#28abf6');" data-ca-event="ce.update_object_status_callback">Отложен</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=I&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'i', '#c2c2c2');" data-ca-event="ce.update_object_status_callback">Аннулирован</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=X&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'x', '#6aa84f');" data-ca-event="ce.update_object_status_callback">В пункте самовывоза</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=W&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'w', '#76a5af');" data-ca-event="ce.update_object_status_callback">Вручен покупателю</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=Y&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'y', '#cc4125');" data-ca-event="ce.update_object_status_callback">Ожидает звонка</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=A&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'a', '#49afcd');" data-ca-event="ce.update_object_status_callback">На удержании</a></li>
+                    <li><a href="?dispatch=orders.update_status&id=56&status=E&return_url=panel.php%3Fdispatch%3Dorders.manage%26user_id%3D12" onclick="return fn_check_object_status(this, 'e', '#ea9999');" data-ca-event="ce.update_object_status_callback">Возвращено</a></li>
+
+
+                    <li class="divider"></li>
+                    <li><a><label for="select_56_notify">
+                    <input type="checkbox" name="__notify_user" id="select_56_notify" value="Y" checked="checked" onclick="Tygh.$('input[name=__notify_user]').prop('checked', this.checked);">
+                    Информировать покупателя</label></a>
+                    </li>
+                    <li><a><label for="select_56_notify_department">
+                    <input type="checkbox" name="__notify_department" id="select_56_notify_department" value="Y" checked="checked" onclick="Tygh.$('input[name=__notify_department]').prop('checked', this.checked);">
+                    Уведомить отдел оформления и обработки заказов</label></a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </div>
 

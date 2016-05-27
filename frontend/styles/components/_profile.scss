@@ -1,0 +1,87 @@
+.profile {
+    height: 80px;
+    font-size: 0;
+    line-height: 80px;
+    text-align: right;
+
+    &__user {
+        line-height: 30px;
+        margin-right: 15px;
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: middle;
+
+        &__image {
+            float: left;
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 50%;
+            border: 2px solid $c-white;
+        }
+
+        &__name {
+            display: block;
+            margin-left: 42px;
+            font-size: 1.3rem;
+            color: $c-white;
+            text-align: left;
+
+            &__middle {
+                line-height: 1;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &__dropdown {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        line-height: 32px;
+        display: inline-block;
+        vertical-align: middle;
+
+        &__icon {
+            width: 6px;
+            height: 6px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            transition: transform $a-time;
+            
+            &, &:before, &:after {
+                cursor: pointer;
+                border-radius: 50%;
+                background-color: $c-white;
+            }
+            
+            &:before, &:after {
+                width: 100%;
+                height: 100%;
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            &:before {
+                transform: translateY(-150%);
+            }
+
+            &:after {
+                transform: translateY(150%);
+            }
+        }
+
+        &:hover &__icon {
+            transform: translateY(3px) translateX(-8px) rotate(-90deg);
+        }
+    }
+}
+
+// profile__image">
+//                 <img src="" class="" alt="">
+//             </a>
+
+//             <span class="profile"

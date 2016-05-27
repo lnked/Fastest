@@ -1,5 +1,4 @@
-<div id="pk-profiler" class="pf-profiler"> <div class="pf-navbar"> <ul class="pf-navbar-nav"> <li><a title="System Information"> <div class="pf-icon-large pf-icon-pagekit"></div> </a> <script id="panel-system" type="text/template"><h1>Information</h1>
-
+<script id="panel-system" type="text/template"><h1>Information</h1>
     <h2>System</h2>
     <table class="pf-table pf-table-dropdown">
         <tbody>
@@ -17,7 +16,7 @@
         </tr>
         </tbody>
     </table>
-
+    
     <h2>PHP</h2>
     <table class="pf-table pf-table-dropdown">
         <tbody>
@@ -56,15 +55,15 @@
             <td>{{ dbclient }}</td>
         </tr>
         </tbody>
-    </table></script></li><li><a title="Events"><span class="pf-icon pf-icon-events"></span> Events</a> <script id="panel-events" type="text/template"><h1>Events</h1>
+    </table>
+</script>
 
+<script id="panel-events" type="text/template"><h1>Events</h1>
     <p v-if="!called && !notcalled">
         <em>No events have been recorded. Are you sure that debugging is enabled in the kernel?</em>
     </p>
-
     <template v-if="called">
         <h2>Called Listeners</h2>
-
         <table class="pf-table">
             <tbody>
             <tr>
@@ -93,9 +92,7 @@
         </table>
     </template>
     <template v-if="notcalled">
-
         <h2>Not Called Listeners</h2>
-
         <table class="pf-table">
             <tbody>
             <tr>
@@ -122,7 +119,10 @@
             </tr>
             </tbody>
         </table>
-    </template></script></li><li><a title="Routes"><span class="pf-icon pf-icon-routes"></span>Routes</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Route</td> <td>@site/settings</td> </tr> <tr> <td>Path</td> <td>/admin/site/settings </td> </tr> <tr> <td>Controller</td> <td><abbr title="Pagekit\Site\Controller\NodeController::settingsAction">NodeController::settingsAction</abbr></td> </tr> </tbody> </table> </div> <script id="panel-routes" type="text/template"><h1>Routes</h1>
+    </template>
+</script>
+
+<script id="panel-routes" type="text/template"><h1>Routes</h1>
     <table class="pf-table">
         <thead>
             <tr>
@@ -138,26 +138,23 @@
                 <td><abbr :title="r.controller">{{ r.controller | short }}</abbr></td>
             </tr>
         </tbody>
-    </table></script></li><li><a title="Time"><span class="pf-icon pf-icon-time"></span>294.29ms</a></li><li><a title="Memory"><span class="pf-icon pf-icon-memory"></span> 2MB</a></li><li><a title="Database" class="pf-parent"><span class="pf-icon pf-icon-database"></span>6</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Queries</td> <td>6</td> </tr> <tr> <td>Time</td> <td>5.94ms</td> </tr> <tr> <td>Driver</td> <td>pdo_mysql</td> </tr> </tbody> </table> </div> <script id="panel-database" type="text/template"><h1>Queries</h1>
+    </table>
+</script>
 
+<script id="panel-database" type="text/template"><h1>Queries</h1>
     <p v-show="!nb_statements">
         <em>No queries.</em>
     </p>
-
     <div v-for="statement in statements">
-
         <pre><code>{{ statement.sql }}</code></pre>
-
         <p class="pf-submenu">
             <span>{{ statement.duration_str }}</span>
             <span>{{ statement.params | json }}</span>
         </p>
+    </div>
+</script>
 
-    </div></script></li><li><a title="User"><span class="pf-icon pf-icon-auth pf-parent"></span>admin</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Username</td> <td>admin</td> </tr> <tr> <td>Roles</td> <td>{
-  "2": "Authenticated",
-  "3": "Administrator"
-}</td> </tr> <tr> <td>Authenticated</td> <td>yes</td> </tr> <tr> <td>Class</td> <td>Pagekit\User\Model\User</td> </tr> </tbody> </table> </div></li><li><a title="Log">Log (1)</a> <script id="panel-log" type="text/template"><h1>Logs</h1>
-
+<script id="panel-log" type="text/template"><h1>Logs</h1>
     <table class="pf-table">
         <thead>
             <tr>
@@ -171,7 +168,10 @@
                 <td>{{ record.level_name }}</td>
             </tr>
         </tbody>
-    </table></script></li><li><a title="Requests">Requests</a> <div class="pf-dropdown"> <table class="pf-table pf-table-dropdown"> <tbody> <tr> <td>Request Id</td> <td>93e99449b207402dd0bd1d714d4b805fb2ae9847</td> </tr> </tbody> </table> </div> <script id="panel-requests" type="text/template"><h1>Requests</h1>
+    </table>
+</script>
+
+<script id="panel-requests" type="text/template"><h1>Requests</h1>
     <table class="pf-table">
         <thead>
             <tr>
@@ -198,5 +198,152 @@
                 <td><a @click.prevent="$root.load(request.id)">{{ request.id }}</a></td>
             </tr>
         </tbody>
-    </table></script></li> </ul> <a class="pf-close"></a> </div> <div class="pf-profiler-panel" style="display: none; height: 355px;"></div>
+    </table>
+</script>
+
+<div id="pk-profiler" class="pf-profiler" style="display: none;">
+    <div class="pf-navbar">
+        <ul class="pf-navbar-nav">
+            <li><a title="System Information">
+            <div class="pf-icon-large pf-icon-pagekit">
+            </div>
+            </a>
+
+            </li>
+            <li><a title="Events"><span class="pf-icon pf-icon-events"></span> Events</a>
+            
+            </li>
+            <li><a title="Routes"><span class="pf-icon pf-icon-routes"></span>Routes</a>
+            <div class="pf-dropdown">
+                <table class="pf-table pf-table-dropdown">
+                <tbody>
+                <tr>
+                    <td>
+                        Route
+                    </td>
+                    <td>
+                        @site/settings
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Path
+                    </td>
+                    <td>
+                        /admin/site/settings
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Controller
+                    </td>
+                    <td>
+                        <abbr title="Pagekit\Site\Controller\NodeController::settingsAction">NodeController::settingsAction</abbr>
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+
+            </li>
+            <li><a title="Time"><span class="pf-icon pf-icon-time"></span>294.29ms</a></li>
+            <li><a title="Memory"><span class="pf-icon pf-icon-memory"></span> 2MB</a></li>
+            <li><a title="Database" class="pf-parent"><span class="pf-icon pf-icon-database"></span>6</a>
+            <div class="pf-dropdown">
+                <table class="pf-table pf-table-dropdown">
+                <tbody>
+                <tr>
+                    <td>
+                        Queries
+                    </td>
+                    <td>
+                        6
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Time
+                    </td>
+                    <td>
+                        5.94ms
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Driver
+                    </td>
+                    <td>
+                        pdo_mysql
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            
+            </li>
+            <li><a title="User"><span class="pf-icon pf-icon-auth pf-parent"></span>admin</a>
+            <div class="pf-dropdown">
+                <table class="pf-table pf-table-dropdown">
+                <tbody>
+                <tr>
+                    <td>
+                        Username
+                    </td>
+                    <td>
+                        admin
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Roles
+                    </td>
+                    <td>
+                        { "2": "Authenticated", "3": "Administrator" }
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Authenticated
+                    </td>
+                    <td>
+                        yes
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Class
+                    </td>
+                    <td>
+                        Pagekit\User\Model\User
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            </li>
+            <li><a title="Log">Log (1)</a>
+            
+            </li>
+            <li><a title="Requests">Requests</a>
+            <div class="pf-dropdown">
+                <table class="pf-table pf-table-dropdown">
+                <tbody>
+                <tr>
+                    <td>
+                        Request Id
+                    </td>
+                    <td>
+                        93e99449b207402dd0bd1d714d4b805fb2ae9847
+                    </td>
+                </tr>
+                </tbody>
+                </table>
+            </div>
+            
+            </li>
+        </ul>
+        <a class="pf-close"></a>
+    </div>
+    <div class="pf-profiler-panel" style="display: none; height: 355px;">
+    </div>
 </div>

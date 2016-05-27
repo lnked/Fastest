@@ -1,0 +1,81 @@
+// Breakpoints for each query
+$smartphone: 480px;
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+
+@mixin respondTo($media) {
+    @if $media == smartphone {
+        @media (max-width: $smartphone) { @content; }
+    }
+    @else if $media == tablet {
+        @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+    }
+    @else if $media == smallScreen {
+        @media (max-width: $desktop) { @content; }
+    }
+    @else if $media == desktop {
+        @media (min-width: $desktop) { @content; }
+    }
+}
+
+// div {
+//     // regular styles here
+//     @include respondTo(desktop) {
+//         &:hover { background: blue; } // only add the hover effect on desktop browsers
+//     }
+// }
+
+$breakpoint-small: 600px;
+$breakpoint-med-small: 960px;
+$breakpoint-med: 1175px;
+
+@mixin screen($size, $type: max, $pixels: $breakpoint-small) {
+    @if $size == 'small' {
+        @media screen and ($type + -width: $breakpoint-small) {
+            @content;
+        }
+    }
+    @else if $size == 'med-small' {
+        @media screen and ($type + -width: $breakpoint-med-small) {
+            @content;
+        }
+    }
+    @else if $size == 'med' {
+        @media screen and ($type + -width: $breakpoint-med) {
+           @content;
+        }
+    }
+    @else if $size == 'large' {
+        @media screen and ($type + -width: $breakpoint-med) {
+            @content;
+        }
+    }
+    @else if $size == 'custom' {
+        @media screen and ($type + -width: $pixels + px) {
+            @content;
+        }
+    }
+    @else {
+        @content;
+    }
+}
+
+// .foo {
+//   @include screen(large) {
+//     width: 20%;
+//   }
+//   @include screen(med) {
+//     width: 40%;
+//   }
+//   @include screen(med-small) {
+//     width: 60%;
+//   }
+//   @include screen(small) {
+//     width: 80%;
+//   }
+//   @include screen(custom, max, 400) {
+//     width: 100%;
+//   }
+// }

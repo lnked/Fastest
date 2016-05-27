@@ -1,0 +1,40 @@
+.input-placeholder {
+    clear: both;
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+    background-color: #fff;
+    box-shadow: 0px 3px 25px 0px rgba(16,51,74,0.1);
+
+    &[placeholder] {
+        padding-top: 30px;
+    }
+
+    &:before {
+        font-size: 1.2rem;
+        color: #3a4d57;
+        line-height: 35px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        content: attr(placeholder);
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+ 
+    &.focus {
+        &:before {
+            opacity: 1;
+        }
+    }
+    
+    &__text {
+        width: 100%;
+        border: 0;
+    }
+}

@@ -1,8 +1,11 @@
 @charset "utf-8";
 
 @import "variables";
+
+@import "utils/mixins/*";
+
+// Themes
 @import "themes/base";
-@import "utils/mixins";
 
 @import "base/fonts";
 @import "base/reset";

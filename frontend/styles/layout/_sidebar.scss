@@ -8,18 +8,14 @@
     font-size: 0;
     margin-right: -$sidebar-width;
     background-color: $c-sidebar-color;
+    box-shadow: $c-sidebar-shadow;
 
 	&__logo {
-        width: 80px;
-        height: 80px;
-        display: block;
         cursor: pointer;
-        position: relative;
         z-index: 10;
-        background: url(../images/lightning.svg) 50% 50% no-repeat;
-        background-size: 40px 40px;
+        position: relative;
         background-color: $c-sidebar-color-dark;
-        border-bottom: 1px solid $c-sidebar-color-light;
+        border-bottom: 1px solid #ececec;
     }
 
     &__container {

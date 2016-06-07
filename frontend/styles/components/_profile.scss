@@ -5,17 +5,23 @@
     text-align: right;
 
     &__user {
-        line-height: 30px;
-        margin-right: 15px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        line-height: 44px;
+        text-align: center;
+        margin-right: 10px;
         text-decoration: none;
         display: inline-block;
         vertical-align: middle;
+        background-color: $c-yellow;
 
         &__image {
             float: left;
-            max-width: 30px;
-            max-height: 30px;
+            max-width: 44px;
+            max-height: 44px;
             border-radius: 50%;
+            display: none;
             border: 2px solid $c-white;
         }
 
@@ -25,6 +31,7 @@
             font-size: 1.3rem;
             color: $c-white;
             text-align: left;
+            display: none;
 
             &__middle {
                 line-height: 1;
@@ -39,6 +46,7 @@
         height: 32px;
         cursor: pointer;
         line-height: 32px;
+        text-align: center;
         display: inline-block;
         vertical-align: middle;
 
@@ -73,15 +81,5 @@
                 transform: translateY(150%);
             }
         }
-
-        &:hover &__icon {
-            transform: translateY(3px) translateX(-8px) rotate(-90deg);
-        }
     }
 }
-
-// profile__image">
-//                 <img src="" class="" alt="">
-//             </a>
-
-//             <span class="profile"

@@ -1,5 +1,6 @@
 <?php
 
+// namespace App\Singleton;
 define('REQUEST_METHOD_GET', 1);
 define('REQUEST_METHOD_POST', 2);
 define('REQUEST_METHOD_PUT', 3);

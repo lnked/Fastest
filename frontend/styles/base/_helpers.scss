@@ -4,44 +4,98 @@
 	text-shadow: none;
 }
 
+::-ms-clear, ::-ms-reveal {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
 svg {
 	shape-rendering: optimizeSpeed;
 }
 
-@mixin elementShadow($shadow: 1) {
-    box-shadow: inset 0 -#{$shadow}px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+@mixin elementShadow($shadow: 1, $opacity: 0.1) {
+    box-shadow: inset 0 #{$shadow}px 0 rgba(0, 0, 0, $opacity), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
-@mixin variations() {
+@mixin variations($hover: false) {
     &_default {
         color: $c-default-color;
         background-color: $c-default-background;
+    
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-default-background, $p-variations-percent / 3);
+            }
+        }
     }
 
     &_primary {
         color: $c-primary-color;
         background-color: $c-primary-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-primary-background, $p-variations-percent);
+            }
+        }
     }
 
     &_success {
         color: $c-success-color;
         background-color: $c-success-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-success-background, $p-variations-percent);
+            }
+        }
     }
 
     &_info {
         color: $c-info-color;
         background-color: $c-info-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-info-background, $p-variations-percent);
+            }
+        }
     }
 
     &_warning {
         color: $c-warning-color;
         background-color: $c-warning-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: lighten($c-warning-background, $p-variations-percent);
+            }
+        }
     }
 
     &_danger {
         color: $c-danger-color;
         background-color: $c-danger-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-danger-background, $p-variations-percent);
+            }
+        }
     }
+}
+
+%label {
+    display: inline-block;
+    padding: 4px 7px 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    color: $c-default-color;
+    background-color: $c-default-background;
 }
 
 %button {
@@ -62,7 +116,7 @@ svg {
 	user-select: none;
 	-webkit-appearance: none;
 	border-color: rgba(0, 0, 0, 0);
-    transition: border-color $a-time ease, background-color $a-time ease, color $a-time ease;
+    transition: border-color $a-time ease, background-color $a-time ease, color $a-time ease, box-shadow $a-micro-time ease;
     
     &:focus {
         outline: 0;

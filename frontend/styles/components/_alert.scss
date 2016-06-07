@@ -2,8 +2,7 @@
     display: block;
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 1px;
-    border: 1px solid rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .05);
     color: $c-default-color;
     background-color: $c-default-background;
     @include variations();

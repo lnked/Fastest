@@ -1,0 +1,340 @@
+.ui-switch {
+    width: 150px;
+    height: 42px;
+    background-color: #FFF;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui-switch input {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    border-top: 20px #000 solid;
+    border-bottom: 20px #000 solid;
+    width: 150px;
+    height: 42px;
+    opacity: 0;
+    filter: alpha(opacity=100);
+}
+
+.ui-switch-disabled input {
+    cursor: default;
+}
+
+.ui-switch-on .ui-switch-disable,.ui-switch-off .ui-switch-enable {
+    display: block;
+}
+
+.ui-switch-process.ui-switch-on .ui-switch-disable,.ui-switch-process.ui-switch-off .ui-switch-enable {
+    display: none;
+}
+
+.ui-switch-process.ui-switch-on .ui-switch-disabling,.ui-switch-process.ui-switch-off .ui-switch-enabling {
+    cursor: default;
+    display: block;
+}
+
+.ui-switch-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.ui-switch-button {
+    display: table;
+    width: 258px;
+}
+
+.ui-switch-value {
+    display: table-cell;
+    vertical-align: middle;
+    width: 108px;
+    height: 42px;
+    color: #CCC;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+}
+
+.ui-switch-value span {
+    font-size: 16px;
+    line-height: 16px;
+    font-family: PFDinDisplayPro-Reg,Arial,sans-serif;
+    line-height: normal;
+}
+
+.ui-switch-statys {
+    background-color: #e6e6e6;
+    position: relative;
+}
+
+.ui-switch-statys div {
+    width: 42px;
+    height: 42px;
+    display: block;
+    background-color: #e6e6e6;
+    position: relative;
+}
+
+.ui-switch-statys i {
+    width: 28px;
+    height: 28px;
+    display: block;
+    background-image: url('/static/script/ui/widgets/switch/media/status.png');
+    background-position: -28px 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -14px;
+    margin-top: -14px;
+}
+
+.ui-switch-normal.ui-switch-on .ui-switch-box {
+    left: 0;
+}
+
+.ui-switch-on {
+    background-color: #00985f;
+}
+
+.ui-switch-on:hover {
+    background-color: #08a062;
+}
+
+.ui-switch-on:active {
+    background-color: #009258;
+}
+
+.ui-switch-on .ui-switch-value {
+    color: #FFF;
+}
+
+.ui-switch-on .ui-switch-statys i {
+    background-position: 0 -64px;
+}
+
+.ui-switch-off .ui-switch-box {
+    left: -108px;
+}
+
+.ui-switch-off {
+    background-color: #57068c;
+}
+
+.ui-switch-off:hover {
+    background-color: #5c0a96;
+}
+
+.ui-switch-off:active {
+    background-color: #520084;
+}
+
+.ui-switch-off .ui-switch-value {
+    color: #FFF;
+}
+
+.ui-switch-off .ui-switch-statys i {
+    background-position: 0 -32px;
+}
+
+.ui-switch-normal.ui-switch-process.ui-switch-on .ui-switch-box {
+    left: -108px;
+    -moz-animation: on .2s 1 linear;
+    -webkit-animation: on .2s 1 linear;
+    -ms-animation: on .2s 1 linear;
+    -o-animation: on .2s 1 linear;
+    animation: on .2s 1 linear;
+}
+
+.ui-switch-normal.ui-switch-process.ui-switch-off .ui-switch-box {
+    left: 0;
+    -moz-animation: off .2s 1 linear;
+    -webkit-animation: off .2s 1 linear;
+    -ms-animation: off .2s 1 linear;
+    -o-animation: off .2s 1 linear;
+    animation: off .2s 1 linear;
+}
+
+.ui-switch-process.ui-switch-on .ui-switch-statys i,.ui-switch-process.ui-switch-off .ui-switch-statys i {
+    background-position: 0 0;
+    -moz-animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    -ms-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+
+.ui-switch-status-process {
+    display: none;
+    opacity: .3;
+    filter: alpha(Opacity=30);
+}
+
+.ui-switch-process.ui-switch-on .ui-switch-status-process-off .ui-switch-status-process {
+    display: block;
+}
+
+.ui-switch-process.ui-switch-on .ui-switch-status-process-off .ui-switch-status {
+    display: none;
+}
+
+.ui-switch-process.ui-switch-off .ui-switch-status-process-on .ui-switch-status-process {
+    display: block;
+}
+
+.ui-switch-process.ui-switch-off .ui-switch-status-process-on .ui-switch-status {
+    display: none;
+}
+
+@media only screen and (min-width:1440px) {
+    .ui-switch,.ui-switch input {
+        width: 170px;
+    }
+
+    .ui-switch-button {
+        width: 288px;
+    }
+
+    .ui-switch-value {
+        width: 118px;
+    }
+
+    .ui-switch,.ui-switch input,.ui-switch-value {
+        height: 52px;
+    }
+
+    .ui-switch-statys div {
+        width: 52px;
+        height: 52px;
+    }
+
+    .ui-switch-value span {
+        font-size: 19px;
+        line-height: 19px;
+        font-family: PFDinDisplayPro-Light,Arial,sans-serif;
+    }
+
+    .ui-switch-off .ui-switch-box,.ui-switch-normal.ui-switch-process.ui-switch-on .ui-switch-box {
+        left: -118px;
+    };
+}
+
+@media only screen and (max-width:320px) {
+    .ui-switch-value span {
+        font-size: 14px;
+        line-height: 14px;
+    };
+}
+
+@-moz-keyframes on {
+    0 {
+        left: 0;
+    }
+
+    100% {
+        left: -81px;
+    };
+}
+
+@-webkit-keyframes on {
+    0 {
+        left: 0;
+    }
+
+    100% {
+        left: -81px;
+    };
+}
+
+@-ms-keyframes on {
+    0 {
+        left: 0;
+    }
+
+    100% {
+        left: -81px;
+    };
+}
+
+@-o-keyframes on {
+    0 {
+        left: 0;
+    }
+
+    100% {
+        left: -81px;
+    };
+}
+
+@keyframes on {
+    0 {
+        left: 0;
+    }
+
+    100% {
+        left: -81px;
+    };
+}
+
+@-moz-keyframes off {
+    0 {
+        left: -81px;
+    }
+
+    100% {
+        left: 0;
+    };
+}
+
+@-webkit-keyframes off {
+    0 {
+        left: -81px;
+    }
+
+    100% {
+        left: 0;
+    };
+}
+
+@-ms-keyframes off {
+    0 {
+        left: -81px;
+    }
+
+    100% {
+        left: 0;
+    };
+}
+
+@-o-keyframes off {
+    0 {
+        left: -81px;
+    }
+
+    100% {
+        left: 0;
+    };
+}
+
+@keyframes off {
+    0 {
+        left: -81px;
+    }
+
+    100% {
+        left: 0;
+    };
+}

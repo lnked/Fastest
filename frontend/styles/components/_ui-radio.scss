@@ -1,0 +1,96 @@
+.ui-radio {
+    position: relative;
+    font-size: 14px;
+    line-height: 19px;
+    font-family: PFDinDisplayPro-Reg,Arial,sans-serif;
+    display: inline-block;
+    vertical-align: baseline;
+    padding-right: 10px;
+}
+
+.ui-radio,.ui-radio * {
+    cursor: pointer;
+}
+
+.ui-radio span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui-radio i {
+    width: 19px;
+    height: 19px;
+    border-radius: 100%;
+    border: 1px #b2b2b2 solid;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    position: relative;
+    top: 0;
+    z-index: 2;
+}
+
+.ui-radio i i {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 0;
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 3;
+}
+
+.ui-radio:hover i {
+    border: 1px #999 solid;
+}
+
+.ui-radio:hover i i {
+    border: 0;
+}
+
+.ui-radio-active i i {
+    background: #009258;
+}
+
+.ui-radio input {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.ui-radio-disabled i,.ui-radio-disabled i i,.ui-radio-disabled.ui-radio-active i {
+    background: #f2f2f2;
+}
+
+.ui-radio-disabled.ui-radio-active i i {
+    background: #b2b2b2;
+}
+
+.ui-radio.ui-radio-disabled:hover i {
+    border: 1px #b2b2b2 solid;
+}
+
+.ui-radio.ui-radio-disabled:hover i i {
+    border: 0;
+}
+
+.ui-radio.ui-radio-disabled,.ui-radio.ui-radio-disabled * {
+    cursor: default;
+}
+
+@media only screen and (min-width:1440px) {
+    .ui-radio {
+        font-size: 16px;
+    };
+}
+
+@media only screen and (max-width:320px) {
+    .ui-radio {
+        font-size: 14px;
+    };
+}

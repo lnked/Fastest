@@ -3,13 +3,15 @@
     font-size: 1.4rem;
     padding: 20px;
     position: relative;
-    margin-bottom: 35px;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.04);
     color: $c-box-text-color-default;
     background-color: $c-box-background-default;
     box-shadow: $c-box-box-shadow-default;
     border: 1px solid $c-box-border-color-default;
     
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+
     &__border {
         border-bottom: 1px solid $c-box-border-inner-default;
     }

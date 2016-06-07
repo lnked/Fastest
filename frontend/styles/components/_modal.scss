@@ -1,50 +1,89 @@
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
+.modal {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+    width: 100%;
 }
 
-.modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+.modal-overlay {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    transition: opacity .3s ease;
 }
 
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
+.modal.active {
+    display: block;
+    opacity: 1;
+    z-index: 1988;
 }
 
-.modal-body {
-  margin: 20px 0;
+.modal-close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
-.modal-default-button {
-  float: right;
+.modal.active .modal-overlay {
+    opacity: 1;
 }
 
-.modal-enter, .modal-leave {
-  opacity: 0;
+.modal.active .modal-container {
+    animation: slide-down .216s;
 }
 
 .modal-enter .modal-container,
 .modal-leave .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.modal-container {
+    max-width: 100%;
+    width: 640px;
+    animation: slide-up .216s;
+    background-color: $c-white;
+    border-radius: 3px;
+    display: block;
+    margin: 40px auto;
+    padding: 0;
+    text-align: left;
+    z-index: 1988;
+    position: relative;
+    transition: all .3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+}
+
+.modal-container .modal-header {
+    padding: 1.5rem;
+}
+.modal-container .modal-header .modal-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.modal-container .modal-body {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.modal-container .modal-footer {
+    padding: 1.5rem;
+    text-align: right;
 }

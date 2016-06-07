@@ -12,6 +12,10 @@
     border-collapse: collapse;
     line-height: 1.5rem;
     font-weight: 300;
+
+    th {
+        font-weight: 700;
+    }
 }
 
 .table>thead>tr>th {

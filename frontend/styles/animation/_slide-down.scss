@@ -1,0 +1,10 @@
+@keyframes slide-down {
+  0% {
+    margin-top: -3rem;
+    opacity: 0;
+  }
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}

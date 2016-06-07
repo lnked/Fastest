@@ -1,0 +1,24 @@
+.breadcrumb {
+    padding: 1.2rem;
+
+    &__item {
+        display: inline-block;
+        margin: 0;
+        
+        &:last-child,
+        &:last-child &__link {
+            color: #666;
+            pointer-events: none;
+        }
+
+        &:not(:last-child)::after {
+            color: #c5c5c5;
+            content: "/";
+            padding: 0 .4rem;
+        }
+
+        &__link {
+            text-decoration: none;
+        }
+    }
+}

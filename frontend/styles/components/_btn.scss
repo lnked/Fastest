@@ -5,17 +5,15 @@
     line-height: 30px;
     padding-left: 15px;
     padding-right: 15px;
-    color: $c-default-color;
-    background-color: $c-default-background;
-    @include elementShadow(2);
+    background: rgba(0, 0, 0, 0);
+    @include elementShadow(-2);
 
     &:active {
-        box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.1);
+        @include elementShadow(2);
     }
     
     &_wide {
         width: 100%;
-        text-align: center;
         padding-left: 0;
         padding-right: 0;
     }
@@ -35,6 +33,39 @@
         font-size: 1.7rem;
         line-height: 50px;
     }
+    
+    &_link {
+        color: $c-blue;
 
-    @include variations();
+        &:hover {
+            color: lighten($c-blue, $p-variations-percent);
+        }
+    }
+
+    &_link, &_clear {
+        &, &:hover, &:active {
+            box-shadow: none;
+        }
+    }
+
+    &_clear {
+        width: 20px;
+        height: 20px;
+        color: #666;
+        opacity: .45;
+        padding: 0;
+        line-height: 20px;
+        transition: opacity $a-time;
+
+        &:before {
+            content: "\00d7";
+            font-size: 2rem;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    @include variations(true);
 }

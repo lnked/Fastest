@@ -4,6 +4,8 @@ $select-background: #097dc5;
 $placeholder-color: #A9A9A9;
 $placeholder-opacity: 1;
 
+$p-variations-percent:          10%;
+
 // $body-background:               #ececec !default;
 $body-background:               #f4f7f9 !default;
 $color-text:                    #181818;
@@ -52,6 +54,23 @@ $c-royal-blue:                  #002366;
 $c-royal-blue-light:            #4169E1;
 $c-yellow-light:                #EFF8C7;
 
+$c-yellow:                      #f9e97d;
+$c-orange-light:                #faad40;
+$c-orange:                      #f69220;
+$c-red:                         #EF3F3E;
+$c-red2:                        #fc2929;
+$c-red-dark:                    #c63a28;
+$c-purple:                      #5319e7;
+$c-purple2:                     #8c2b8a;
+$c-purple-dark:                 #9d2063;
+$c-pink:                        #e82b7b;
+$c-green:                       #8CC751;
+$c-green-light:                 #b8d374;
+$c-blue:                        #437FC1;
+$c-blue1:                       #2A96E8;
+$c-blue2:                       #1e76ba;
+$c-blue-light:                  #8fcfeb;
+
 // yellow         ffd200
 // orange         f5683d
 // green          01ceb8
@@ -78,29 +97,21 @@ $c-default-color:               #000;
 $c-default-background:          #f0f0f0;
 
 $c-primary-color:               #fff;
-$c-primary-background:          #2A96E8;
+$c-primary-background:          #437FC1;
 
 $c-success-color:               #fff;
-$c-success-background:          #5cb85c;
+$c-success-background:          #8CC751;
 
 $c-info-color:                  #fff;
 $c-info-background:             #45C4EA;
+$c-info-background:             #1FB6FF;
 
-$c-warning-color:               #fff;
-$c-warning-background:          #f69220;
+// $c-warning-color:               #fff;
+// $c-warning-background:          #f69220;
+
+$c-warning-color:               #332900;
+$c-warning-background:          #fbca04;
+// $c-warning-background:          #FFDE2D;
 
 $c-danger-color:                #fff;
-$c-danger-background:           #ee4037;
-
-$c-yellow:                      #f9e97d;
-$c-orange-light:                #faad40;
-$c-orange:                      #f69220;
-$c-red:                         #ee4037;
-$c-red-dark:                    #c63a28;
-$c-purple:                      #8c2b8a;
-$c-purple-dark:                 #9d2063;
-$c-pink:                        #e82b7b;
-$c-green:                       #009247;
-$c-green-light:                 #b8d374;
-$c-blue:                        #1e76ba;
-$c-blue-light:                  #8fcfeb;
+$c-danger-background:           #EF3F3E;

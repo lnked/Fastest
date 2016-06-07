@@ -1,16 +1,9 @@
 .badge {
-    display: inline-block;
-    padding: 4px 7px 5px;
+    @extend %label;
     min-width: 10px;
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
+    user-select: none;
     vertical-align: middle;
     border-radius: 10px;
-    color: $c-default-color;
-    background-color: $c-default-background;
-    @include elementShadow(1);
+    @include elementShadow(-1);
     @include variations();
 }

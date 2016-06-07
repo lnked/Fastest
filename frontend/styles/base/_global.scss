@@ -13,7 +13,8 @@ html, body { height: 100%; }
 html {
 	font-size: $font-base;
 	font-family: $font-family;
-	text-size-adjust: 100%;
+	// text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
 	quotes: "“" "”";
 }
 

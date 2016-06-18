@@ -1,10 +1,6 @@
 .layout-header {
     width: 100%;
-    height: 80px;
-    // z-index: 100;
-    // position: fixed;
-    // margin: 0;
-    background-color: $c-royal-blue;
+    height: 79px;
     background-color: $c-blue;
 
 	&__wrapper {
@@ -17,6 +13,29 @@
         position: absolute;
         right: 8px;
         top: 0;
+    }
+
+    &__activity {
+        position: absolute;
+        right: 120px;
+        top: 50%;
+        margin-top: -22px;
+        font-size: 0;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 50%;
+        text-align: center;
+        
+        svg {
+            width: 22px;
+            height: 22px;
+            fill: $c-yellow;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &.is_active {}
     }
 }
 

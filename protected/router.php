@@ -2,7 +2,8 @@
 
 namespace Fastest\Router;
 
-use \Fastest\Singleton\Singleton as Singleton;
+use Fastest\Functions as Functions;
+use Fastest\Singleton\Singleton as Singleton;
 
 // https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5.1.1
 
@@ -38,8 +39,23 @@ class Router
     /**
     * @var string  contain the temporary value to add when you use the static method group
     */
-    private static $routes = [];
-  
+    private static $routes = [
+        'GET' => [],
+        'POST' => [],
+        'PUT' => [],
+        'DELETE' => [],
+        'PATCH' => [],
+        'HEAD' => [],
+    ];
+
+    private static $methods = [
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE',
+        'HEAD'
+    ];
+ 
     /**
     * Initialize routing
     */
@@ -48,36 +64,79 @@ class Router
         static::$routes = $routes ?? static::$routes;
     }
 
-    public function get($route, $callback)
+    public function get($route, $handler)
     {
-        $this->add(['GET'], $route, $callback);
+        $this->add(['GET'], $route, $handler);
     }
 
-    public function post($route, $callback)
+    public function post($route, $handler)
     {
-        $this->add(['POST'], $route, $callback);
+        $this->add(['POST'], $route, $handler);
     }
 
-    public function put($route, $callback)
+    public function put($route, $handler)
     {
-        $this->add(['PUT'], $route, $callback);
+        $this->add(['PUT'], $route, $handler);
     }
 
-    public function delete($route, $callback)
+    public function delete($route, $handler)
     {
-        $this->add(['DELETE'], $route, $callback);
+        $this->add(['DELETE'], $route, $handler);
     }
 
-    public function patch($route, $callback)
+    public function patch($route, $handler)
     {
-        $this->add(['PATCH'], $route, $callback);
+        $this->add(['PATCH'], $route, $handler);
     }
 
-    public function add($methods, $pattern = '', $callback = null)
+
+
+
+    private function convertRoute($route)
+    {
+        if (false === strpos($route, '(')) {
+            return $route;
+        }
+ 
+        return preg_replace_callback('#\((\w+):(\w+)\)#', 
+              array($this, 'replaceRoute'), $route);
+    }
+ 
+    private function replaceRoute($match)
+    {
+        $name = $match[1];
+        $pattern = $match[2];
+ 
+        return '(?<' . $name . '>' . 
+          strtr($pattern, $this->patterns) . ')';
+    }
+
+
+    /**
+     * Adds a route to the collection.
+     *
+     * The syntax used in the $route string depends on the used route parser.
+     *
+     * @param string|string[] $httpMethod
+     * @param string $route
+     * @param mixed  $handler
+     */
+    public function addRoute($methods, $route = '', $handler = null) {
+        $routeDatas = $this->routeParser->parse($route);
+        foreach ($methods as $method) {
+            foreach ($routeDatas as $routeData) {
+                $this->dataGenerator->addRoute($method, $routeData, $handler);
+            }
+        }
+    }
+
+    public function add($methods, $pattern = '', $handler = null)
     {
         // preg_match('/(?P<name>\w+): (?P<digit>\d+)/', $url);
         // preg_match('/(?<name>\w+): (?<digit>\d+)/', $str, $matches);
         // preg_match('/^[a-z0-9_.\/\\\]*$/i', $file_string);
+
+        exit(Functions\__('add:', $methods, $pattern, $this->convertRoute($pattern)));
 
         preg_match('/(?P<name>\w+): (?P<digit>\d+)/', 'foobar: 2008', $matches);
 
@@ -106,7 +165,7 @@ class Router
 
                 array_push(static::$routes[$method], [
                     'pattern' => $pattern,
-                    'callback' => $callback
+                    'callback' => $handler
                 ]);
             }
         }
@@ -117,7 +176,7 @@ class Router
 
             array_push(static::$routes[$methods], [
                 'pattern' => $pattern,
-                'callback' => $callback
+                'callback' => $handler
             ]);
         }
     }

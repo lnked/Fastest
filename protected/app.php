@@ -96,6 +96,9 @@ $r = new Router();
 
 $r->get('/user/{action:\w}/{id:\d}', 'handler1');
 
+$r->get('/section1/{id}/{page}/', 'handler1');
+$r->get('/section1/{id}/', 'handler1');
+
 $r->get('/user/{action:[^0-9/][^/]*}/{id:[0-9]+}', 'handler1');
 
 $r->get('/product/{id}/{item}', function ($id = 0, $item = 0) {
@@ -111,10 +114,72 @@ $r->get('/api/robots/{id:[0-9]+}', function ($id) {
 
 });
 
-// Получение робота по первичному ключу
+// // This route
+// $r->addRoute('GET', '/user/{id:\d+}[/{name}]', 'handler');
+// // Is equivalent to these two routes
+// $r->addRoute('GET', '/user/{id:\d+}', 'handler');
+// $r->addRoute('GET', '/user/{id:\d+}/{name}', 'handler');
+
+// // Multiple nested optional parts are possible as well
+// $r->addRoute('GET', '/user[/{id:\d+}[/{name}]]', 'handler');
+
+// // This route is NOT valid, because optional parts can only occur at the end
+// $r->addRoute('GET', '/user[/{id:\d+}]/{name}', 'handler');
+
+// // Matches /user/42, but not /user/xyz
+// $r->addRoute('GET', '/user/{id:\d+}', 'handler');
+
+// // Matches /user/foobar, but not /user/foo/bar
+// $r->addRoute('GET', '/user/{name}', 'handler');
+
+// // Matches /user/foo/bar as well
+// $r->addRoute('GET', '/user/{name:.+}', 'handler');
+
+// // This route
+// $r->addRoute('GET', '/user/{id:\d+}[/{name}]', 'handler');
+// // Is equivalent to these two routes
+// $r->addRoute('GET', '/user/{id:\d+}', 'handler');
+// $r->addRoute('GET', '/user/{id:\d+}/{name}', 'handler');
+
+// // Multiple nested optional parts are possible as well
+// $r->addRoute('GET', '/user[/{id:\d+}[/{name}]]', 'handler');
+
+// // This route is NOT valid, because optional parts can only occur at the end
+// $r->addRoute('GET', '/user[/{id:\d+}]/{name}', 'handler');
+
+// $r->addRoute('GET', '/user/{name}/{id:[0-9]+}', 'handler0');
+// $r->addRoute('GET', '/user/{id:[0-9]+}', 'handler1');
+// $r->addRoute('GET', '/user/{name}', 'handler2');
+
+$r->add(
+    "/admin/users/my-profile",
+    array(
+        "controller" => "users",
+        "action"     => "profile"
+    )
+);
+
+$r->add(
+    "/admin/:controller/a/:action/:params",
+    array(
+        "controller" => 1,
+        "action"     => 2,
+        "params"     => 3
+    )
+);
+
+$r->add(
+    "/admin/users/change-password",
+    array(
+        "controller" => "users",
+        "action"     => "changePassword"
+    )
+);
+
 $r->get('/api/robots/{id:[0-9]+}', function ($id) {
 
 });
+
 $r->get('/foo/(\d+)/(\d+)/', 'handler1');
 
 $r->get('/(\d+)', function () {

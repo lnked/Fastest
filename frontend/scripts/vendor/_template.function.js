@@ -1,8 +1,7 @@
 (function(d){
     function template(id, data) {
         if (d.getElementById(id) !== null) {
-            data = data || {};
-            return Mustache.render(d.getElementById(id).innerHTML, data);
+            return Template7.compile(d.getElementById(id).innerHTML)(data || {});
         }
         return '';
     }

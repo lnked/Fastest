@@ -1,9 +1,9 @@
-;(function (window) {
+;(function (w) {
     "use strict";
 
-    var app = window.app || {};
+    w.app = w.app || {};
 
-    app.pagination = {
+    w.app.pagination = {
 
         use: function ()
         {

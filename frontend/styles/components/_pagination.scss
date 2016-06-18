@@ -13,6 +13,10 @@ ul.simple-pagination {
     overflow: hidden;
     padding: 0 5px 5px 0;
     margin: 0;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
 }
 
 .simple-pagination ul {
@@ -33,6 +37,9 @@ span.ellipse.clickable {
 
 .ellipse input {
     width: 3em;
+    height: 26px;
+    padding-left: .4em;
+    border: 1px solid $c-form-field-border-default;
 }
 
 /*------------------------------------*\
@@ -46,14 +53,13 @@ span.ellipse.clickable {
     line-height:24px;
     font-weight: normal;
     text-align: center;
-    border: 1px solid #BBB;
+    border: 1px solid $c-form-field-border-default;
     min-width: 14px;
     padding: 0 7px;
     user-select: none;
     margin: 0 5px 0 0;
-    border-radius: 3px;
+    border-radius: 1px;
     text-decoration: none;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     background: #efefef; /* Old browsers */
     background: #fff; /* Old browsers */
     // background: linear-gradient(top, #ffffff 0%,#efefef 100%); /* W3C */
@@ -65,10 +71,9 @@ span.ellipse.clickable {
 }
 
 .light-theme .current {
-    background: #666;
     color: #FFF;
-    border-color: #444;
-    box-shadow: 0 1px 0 rgba(255,255,255,1), 0 0 2px rgba(0, 0, 0, 0.3) inset;
+    background: $c-royal-blue-light;
+    border-color: $c-royal-blue-light;
     cursor: default;
 }
 

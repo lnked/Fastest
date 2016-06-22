@@ -3,7 +3,7 @@
     min-width: 10px;
     user-select: none;
     vertical-align: middle;
-    border-radius: 10px;
+    border-radius: 20px;
     @include elementShadow(-1);
     @include variations();
 }

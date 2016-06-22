@@ -136,7 +136,7 @@ class Router
         // preg_match('/(?<name>\w+): (?<digit>\d+)/', $str, $matches);
         // preg_match('/^[a-z0-9_.\/\\\]*$/i', $file_string);
 
-        exit(Functions\__('add:', $methods, $pattern, $this->convertRoute($pattern)));
+        exit(__('add:', $methods, $pattern, $this->convertRoute($pattern)));
 
         preg_match('/(?P<name>\w+): (?P<digit>\d+)/', 'foobar: 2008', $matches);
 

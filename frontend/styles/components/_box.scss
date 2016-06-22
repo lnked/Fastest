@@ -6,10 +6,9 @@
     color: $c-box-text-color-default;
     background-color: $c-box-background-default;
     box-shadow: $c-box-box-shadow-default;
-    border: 1px solid $c-box-border-color-default;
     
     &:not(:last-child) {
-        margin-bottom: 35px;
+        margin-bottom: 25px;
     }
 
     &__border {

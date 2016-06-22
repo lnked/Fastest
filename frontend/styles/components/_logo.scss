@@ -2,8 +2,14 @@
     width: 80px;
     height: 80px;
     display: block;
-    background-image: url(../images/lightning.svg);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 44px 44px;
+    font-size: 0;
+    line-height: 80px;
+    text-align: center;
+
+    &__image {
+        max-height: 46px;
+        max-width: 46px;
+        display: inline-block;
+        vertical-align: middle;
+    }
 }

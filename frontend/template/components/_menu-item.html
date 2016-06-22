@@ -1,0 +1,18 @@
+<a href="/markup/@@if (typeof url !== 'undefined'){@@url}" class="menu__item@@if (typeof selected !== 'undefined' && selected === true){ _selected}" data-entity="page">
+    @@if (typeof count !== 'undefined'){
+        <span class="menu__item__notification badge badge_success">@@count</span>
+    }
+    @@if (typeof icon !== 'undefined'){
+    <span class="menu__item__icon">
+        <svg role="image">
+            <use xlink:href="#@@icon"/>
+        </svg>
+    </span>
+    }
+    @@if (typeof title !== 'undefined'){
+    <span class="menu__item__title">
+        @@title
+    </span>
+    }
+    <span class="menu__item__spinner spinner-icon"></span>
+</a>

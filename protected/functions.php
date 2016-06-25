@@ -1,8 +1,6 @@
 <?php
 
-namespace Fastest\Functions;
-
-if (!function_exists('Fastest\Functions\__')) {
+if (!function_exists('__')) {
     function __()
     {
         $args = func_get_args();

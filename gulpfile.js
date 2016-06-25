@@ -1,1 +1,1 @@
-/Applications/MAMP/htdocs/markup.dev/clean/gulpfile.js
+/Applications/MAMP/htdocs/markup.dev/skeleton/gulpfile.js

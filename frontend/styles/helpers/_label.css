@@ -1,0 +1,10 @@
+%label {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    color: $c-default-color;
+    background-color: $c-default-background;
+}

@@ -2,7 +2,6 @@
 
 namespace Fastest\Router;
 
-use Fastest\Functions as Functions;
 use Fastest\Singleton\Singleton as Singleton;
 
 // https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5.1.1
@@ -135,6 +134,31 @@ class Router
         // preg_match('/(?P<name>\w+): (?P<digit>\d+)/', $url);
         // preg_match('/(?<name>\w+): (?<digit>\d+)/', $str, $matches);
         // preg_match('/^[a-z0-9_.\/\\\]*$/i', $file_string);
+
+        $re = "/\\/user\\/([a-zA-Z+])\\/[a-zA-Z+]/mi"; 
+        $str = "/user/a    sdsd/asd"; 
+         
+        preg_match_all($re, $str, $matches);
+
+        preg_match("/user\/([\w]+)\/([\d]+)\/?/", $input_line, $output_array);
+        preg_match("/user\/([a-zA-Z]+)\/([0-9]+)\//", $input_line, $output_array);
+        preg_match("/user\/([a-zA-Z]+)\/([0-9]+)?\//", $input_line, $output_array);
+
+        preg_replace('/\D/', '', $c);
+        preg_replace("/[^0-9]/", "",$c);
+        preg_replace("/[^0-9]/", "",$c);
+
+        // exellent
+        preg_match("/user\/([a-zA-Z]+)\/([0-9]+)\/?/", $input_line, $output_array);
+        
+        // /user/e/10
+        // /user/e/10/
+        // /user/ed/10
+        // /user/ed/10/
+        // /user/easdd/1sad0
+        // /user/easdd/1sad0/
+        // /user/sdsdd/1530
+        // /user/sdsdd/1530/
 
         exit(__('add:', $methods, $pattern, $this->convertRoute($pattern)));
 

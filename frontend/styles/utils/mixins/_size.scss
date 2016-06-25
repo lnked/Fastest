@@ -1,8 +1,0 @@
-/// Помощник для определения размера
-/// @author Hugo Giraudel
-/// @param {Length} $width
-/// @param {Length} $height
-@mixin size($width, $height: $width) {
-    width: $width;
-    height: $height;
-}

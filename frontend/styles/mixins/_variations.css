@@ -1,0 +1,67 @@
+@mixin variations($hover: false) {
+    &_default {
+        color: $c-default-color;
+        background-color: $c-default-background;
+    
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-default-background, $p-variations-percent / 3);
+            }
+        }
+    }
+
+    &_primary {
+        color: $c-primary-color;
+        background-color: $c-primary-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-primary-background, $p-variations-percent);
+            }
+        }
+    }
+
+    &_success {
+        color: $c-success-color;
+        background-color: $c-success-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-success-background, $p-variations-percent);
+            }
+        }
+    }
+
+    &_info {
+        color: $c-info-color;
+        background-color: $c-info-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-info-background, $p-variations-percent);
+            }
+        }
+    }
+
+    &_warning {
+        color: $c-warning-color;
+        background-color: $c-warning-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: lighten($c-warning-background, $p-variations-percent);
+            }
+        }
+    }
+
+    &_danger {
+        color: $c-danger-color;
+        background-color: $c-danger-background;
+        
+        @if $hover == true {
+            &:hover {
+                background-color: darken($c-danger-background, $p-variations-percent);
+            }
+        }
+    }
+}

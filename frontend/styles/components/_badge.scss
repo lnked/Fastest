@@ -1,9 +1,0 @@
-.badge {
-    @extend %label;
-    min-width: 10px;
-    user-select: none;
-    vertical-align: middle;
-    border-radius: 20px;
-    @include elementShadow(-1);
-    @include variations();
-}

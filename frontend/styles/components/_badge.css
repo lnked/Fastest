@@ -1,0 +1,21 @@
+.badge {
+    @extend %label;
+    height: 20px;
+    min-width: 10px;
+    padding: 0 7px;
+    user-select: none;
+    vertical-align: middle;
+    border-radius: 22px;
+    line-height: 20px;
+    text-align: center;
+    @include elementShadow(-1);
+    @include variations();
+
+    &_small {
+        height: 18px;
+        padding: 0 6px;
+        min-width: 16px;
+        font-size: 0.9rem;
+        line-height: 18px;
+    }
+}

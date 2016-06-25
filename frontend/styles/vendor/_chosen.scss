@@ -15,9 +15,9 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
         left: -9999px;
         z-index: 1010;
         width: 100%;
-        border: 1px solid #aaa;
+        border: 1px solid $c-form-field-border-default;
         border-top: 0;
-        background: #fff;
+        background: $c-form-field-background;
     }
 
     &.chosen-with-drop .chosen-drop {
@@ -55,10 +55,10 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
         overflow: hidden;
         padding: 0 0 0 10px;
         height: $form-input-height;
-        border: 1px solid #aaa;
-        background-color: #fff;
+        border: 1px solid $c-form-field-border-default;
+        background-color: $c-form-field-background;
         background-clip: padding-box;
-        color: #444;
+        color: $c-form-field-color-default;
         text-decoration: none;
         white-space: nowrap;
         line-height: $form-input-height - 1px;
@@ -106,7 +106,7 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
         display: block;
         width: 18px;
         height: 100%;
-        line-height: $form-input-height;
+        line-height: $form-input-height - 4px;
 
         b {
             width: 14px;
@@ -132,7 +132,6 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
             height: auto;
             outline: 0;
             border: 1px solid #aaa;
-            background: #fff $chosen-sprite no-repeat 100% -20px;
             background: $chosen-sprite no-repeat 100% -20px;
             font-size: 1em;
             font-family: sans-serif;
@@ -222,8 +221,8 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
         padding: 0 5px;
         width: 100%;
         height: auto;
-        border: 1px solid #aaa;
-        background-color: #fff;
+        border: 1px solid $c-form-field-border-default;
+        background-color: $c-form-field-background;
         cursor: text;
     }
 
@@ -256,13 +255,13 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
             position: relative;
             margin: 5px 4px 3px 0;
             padding: 4px 20px 4px 5px;
-            border: 1px solid #aaa;
+            border: 1px solid $c-form-field-border-default;
             max-width: 100%;
-            background-color: #eeeeee;
+            background-color: $c-form-field-choosen-default;
             background-size: 100% 19px;
             background-repeat: repeat-x;
             background-clip: padding-box;
-            color: #333;
+            color: $c-form-field-color-choosen;
             line-height: 13px;
             cursor: default;
 
@@ -294,7 +293,7 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
         }
 
         &.search-choice-focus {
-            background: #d4d4d4;
+            background: $c-form-field-border-focus;
 
             .search-choice-close {
                 background-position: -42px -10px;
@@ -316,14 +315,14 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
 /* @end */
 
 /* @group Active  */
-.chosen-container-active{
+.chosen-container-active {
     .chosen-single {
-        border: 1px solid #5897fb;
+        border: 1px solid $c-form-field-border-focus;
     }
 
     &.chosen-with-drop {
         .chosen-single {
-            border: 1px solid #aaa;
+            border: 1px solid $c-form-field-border-focus;
         }
 
         .chosen-single div {
@@ -337,7 +336,7 @@ $chosen-sprite-retina: url('/images/chosen/chosen-sprite@2x.png') !default;
     }
 
     .chosen-choices {
-        border: 1px solid #5897fb;
+        border: 1px solid $c-form-field-border-focus;
         
         li.search-field input[type="text"] {
             color: #222 !important;

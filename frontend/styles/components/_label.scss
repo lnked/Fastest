@@ -1,7 +1,0 @@
-.label {
-    @extend %label;
-    vertical-align: baseline;
-    border-radius: .25em;
-    @include elementShadow(-1);
-    @include variations();
-}

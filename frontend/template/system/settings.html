@@ -1,24 +1,407 @@
-@@include('../components/meta.html', {
+@@include('../components/_meta.html', {
     "title": "F\"CMS"
 })
 
-@@include('../popups/popup.html')
+@@include('../popups/_popup.html')
 
-@@include('../components/sidebar.html', {
+@@include('../components/_sidebar.html', {
     "page": "system"
 })
 
 <div class="layout-wrapper">
     <div class="layout-content">
-        @@include('../components/header.html', {
+        @@include('../components/_header.html', {
             "current": "system"
         })
     
         <div class="layout-content__wrapper">
-            asd    
+            
+            <div class="box">
+                <form method="POST" action="/admin/main-options/" enctype="multipart/form-data" class="crud-form">
+                    <input type="submit" value="" style="display:none">
+                    <div class="frame" data-name="tab0">
+                        <table class="otable">
+                        <tbody>
+                        <tr>
+                            <td class="otitle">
+                                Адрес панели администрирования&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="ADMIN_SECTION" value="admin" maxlength="100" size="25" class="form__input">
+                                <div class="field-error top-corner" data-field="ADMIN_SECTION">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Всегда проверять шаблоны на предмет модификации&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="SM_COMPILE_CHECK" value="1">
+                                <div class="field-error top-corner" data-field="SM_COMPILE_CHECK">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Подробно отображать информацию об исключениях&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="DETAILED_EXCEPTION" value="1">
+                                <div class="field-error top-corner" data-field="DETAILED_EXCEPTION">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Включить кэширование данных&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="CACHE_ENABLED" value="1" checked="">
+                                <div class="field-error top-corner" data-field="CACHE_ENABLED">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Включить кэширование Smarty&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="CACHE_BLOCK_ENABLED" value="1" checked="">
+                                <div class="field-error top-corner" data-field="CACHE_BLOCK_ENABLED">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Время жизни КЭШ`а, в сек.&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="CACHE_TIME" value="300" maxlength="11" class="form__input">
+                                <div class="field-error top-corner" data-field="CACHE_TIME">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Подключаемые CSS файлы&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <select name="COMPRESS_CSS" size="1">
+                                    <option data-value="Оставлять как есть" value="0" class="lev_0">Оставлять как есть</option>
+                                    <option data-value="Объединять" value="1" selected="selected" class="lev_0">Объединять</option>
+                                    <option data-value="Объединять и оптимизировать" value="2" class="lev_0">Объединять и оптимизировать</option>
+                                </select>
+                                <div class="field-error top-corner" data-field="COMPRESS_CSS">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Подключаемые JavaScript файлы&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <select name="COMPRESS_JS" size="1">
+                                    <option data-value="Оставлять как есть" value="0" class="lev_0">Оставлять как есть</option>
+                                    <option data-value="Объединять" value="1" selected="selected" class="lev_0">Объединять</option>
+                                    <option data-value="Объединять и оптимизировать" value="2" class="lev_0">Объединять и оптимизировать</option>
+                                </select>
+                                <div class="field-error top-corner" data-field="COMPRESS_JS">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Размещать по-умолчанию инструкции подключения скриптов внизу страницы&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="JS_POSITION_FOOTER" value="1">
+                                <div class="field-error top-corner" data-field="JS_POSITION_FOOTER">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Отображать администратору спецблок на сайте в режиме отладки&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="checkbox" name="show_debug_header" value="1" checked="">
+                                <div class="field-error top-corner" data-field="show_debug_header">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Разрешить выполнение заданий cron<br>
+                                (последний запуск был: 24.06.2016 12:10:01)&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="CRON_ENABLE" value="1" checked="">
+                                <div class="field-error top-corner" data-field="CRON_ENABLE">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="frame nodisp" data-name="tab1">
+                        <div class="c-help cache_info">
+                             Клик по любой из представленных ниже ссылок не будет фатальным для системы. Удаление файлов из кэша лишь будет означать, что эти файлы нужно создать заново. Система может работать медленне, пока кэш не будет пострен заново. Кэш будет строиться помере посещения страниц сайта (в том числе и административной панели).
+                        </div>
+                        <ul class="cache_links">
+                            <li><a href="JavaScript:;" data-ctype="common">Очистить общий кэш (будет очищен также и кэш всех модулей)</a>
+                            <span class="success hidden">готово</span>
+                            </li>
+                            <li><a href="JavaScript:;" data-ctype="min">Удалить объединенные и минимизированные файлы CSS и JS</a>
+                            <span class="success hidden">готово</span>
+                            </li>
+                            <li><a href="JavaScript:;" data-ctype="tplcompile">Удалить скомпилированные шаблоны Smarty</a>
+                            <span class="success hidden">готово</span>
+                            </li>
+                            <li><a href="JavaScript:;" data-ctype="autotpl">Удалить автоматически сгенерированные шаблоны форм в админ. панели</a>
+                            <span class="success hidden">готово</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="frame nodisp" data-name="tab2">
+                        <table class="otable">
+                        <tbody>
+                        <tr>
+                            <td class="otitle">
+                                Будет указано в письме в поле 'От'&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="notice_from" value="Ваш магазин<no-reply@readyscript.ru>" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="notice_from">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Куда присылать ответные письма? (поле Reply)&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="notice_reply" value="no-reply@readyscript.ru" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="notice_reply">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Использовать SMTP для отправки писем&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="checkbox" name="smtp_is_use" value="1">
+                                <div class="field-error top-corner" data-field="smtp_is_use">
+                                </div>
+                                <script>
+                    $(function() {       
+                        $('[name="smtp_is_use"]').change(function() {
+                            var enable = $(this).is(':checked');
+                            $('[name="smtp_host"], [name="smtp_port"], [name="smtp_secure"], [name="smtp_auth"], [name="smtp_username"], [name="smtp_password"]').each(function() {
+                                $(this).closest('tr').toggle(enable);
+                            });
+                        }).change();
+                        $('[name="smtp_auth"]').change(function() {
+                            var enable = $(this).is(':checked');
+                            $('[name="smtp_username"], [name="smtp_password"]').prop('disabled', !enable);
+                        }).change();
+                    });
+                                </script>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                SMTP сервер&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_host" value="ssl://mail.readyscript.ru" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_host">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                SMTP порт&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_port" value="587" maxlength="10" size="10" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_port">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Тип шифрования&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <select name="smtp_secure" size="1" class="form__input">
+                                    <option data-value="Нет шифрования" value="" selected="selected" class="lev_0">Нет шифрования</option>
+                                    <option data-value="SSL" value="ssl" class="lev_0">SSL</option>
+                                    <option data-value="TLS" value="tls" class="lev_0">TLS</option>
+                                </select>
+                                <div class="field-error top-corner" data-field="smtp_secure">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Требуется авторизация на SMTP сервере&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="checkbox" name="smtp_auth" value="1" checked="">
+                                <div class="field-error top-corner" data-field="smtp_auth">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Имя пользователя SMTP&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_username" value="" maxlength="100" size="25" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_username">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Пароль SMTP&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_password" value="" maxlength="100" size="25" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_password">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+
+            <div class="box">
+
+                <div class="frame" data-name="tab2">
+                    <table class="otable">
+                        <tbody>
+                        <tr>
+                            <td class="otitle">
+                                Будет указано в письме в поле 'От'&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="notice_from" value="Ваш магазин<no-reply@readyscript.ru>" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="notice_from">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Куда присылать ответные письма? (поле Reply)&nbsp;&nbsp;<a class="help-icon">?</a>
+                            </td>
+                            <td>
+                                <input name="notice_reply" value="no-reply@readyscript.ru" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="notice_reply">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="otitle">
+                                Использовать SMTP для отправки писем&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="checkbox" name="smtp_is_use" value="1">
+                                <div class="field-error top-corner" data-field="smtp_is_use">
+                                </div>
+                                <script>
+                        $(function() {       
+                            $('[name="smtp_is_use"]').change(function() {
+                                var enable = $(this).is(':checked');
+                                $('[name="smtp_host"], [name="smtp_port"], [name="smtp_secure"], [name="smtp_auth"], [name="smtp_username"], [name="smtp_password"]').each(function() {
+                                    $(this).closest('tr').toggle(enable);
+                                });
+                            }).change();
+                            $('[name="smtp_auth"]').change(function() {
+                                var enable = $(this).is(':checked');
+                                $('[name="smtp_username"], [name="smtp_password"]').prop('disabled', !enable);
+                            }).change();
+                        });
+                                </script>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                SMTP сервер&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_host" value="ssl://mail.readyscript.ru" maxlength="255" size="64" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_host">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                SMTP порт&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_port" value="587" maxlength="10" size="10" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_port">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Тип шифрования&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <select name="smtp_secure" size="1" class="form__input">
+                                    <option data-value="Нет шифрования" value="" selected="selected" class="lev_0">Нет шифрования</option>
+                                    <option data-value="SSL" value="ssl" class="lev_0">SSL</option>
+                                    <option data-value="TLS" value="tls" class="lev_0">TLS</option>
+                                </select>
+                                <div class="field-error top-corner" data-field="smtp_secure">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Требуется авторизация на SMTP сервере&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="checkbox" name="smtp_auth" value="1" checked="">
+                                <div class="field-error top-corner" data-field="smtp_auth">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Имя пользователя SMTP&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_username" value="" maxlength="100" size="25" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_username">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <td class="otitle">
+                                Пароль SMTP&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input name="smtp_password" value="" maxlength="100" size="25" class="form__input">
+                                <div class="field-error top-corner" data-field="smtp_password">
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            
+            </div>
+
         </div>
     </div>
 
 </div>
 
-@@include('../components/scripts.html')
+@@include('../components/_scripts.html')

@@ -1,43 +1,58 @@
 @@include('./components/_meta.html', {
     "title": "F\"CMS",
-    "style": "auth.min.css"
+    "style": "auth.min.css",
+    "nopreload": true
 })
 
 <div class="layout-wrapper layout-wrapper_auth">
     
     <form action="" class="login" method="POST">
-        <span class="login__logo logo"></span>
-
+        <span class="login__logo">
+            <svg class="login__logo__image" role="image">
+                <use xlink:href="#lightning"/>
+            </svg>
+        </span>
+        
+        <!--
         <header class="login__header">
             <div class="login__header__logo"></div>
             <div class="login__header__title">
                 АВТОРИЗАЦИЯ
             </div>
         </header>
+        -->
 
         <div class="login__body">
+            <!--
+            <div class="login__validation">
+                <div class="login__validation__error">Введите адрес эл. почты</div>
+                <div class="login__validation__error">Введите пароль</div>
+            </div>
+            -->
+
             <div class="login__row">
-                <label class="login__label">
-                    <span class="login__label__name login__label__name_black">Логин</span>
-                    <input name="login">
-                </label>
+                <!-- <label class="login__label"> -->
+                    <!-- <span class="login__header-name login__header-name_black">Логин</span> -->
+                    <input name="login" class="login__input">
+                <!-- </label> -->
+
+                <div class="login__row__valation"></div>
             </div>
 
             <div class="login__row">
-                <label class="login__label">
-                    <span class="login__label__name login__label__name_black">Пароль</span>
+                <!-- <label class="login__label"> -->
+                    <!-- <span class="login__header-name login__header-name_black">Пароль</span> -->
                     <span class="login__password">
+                        <a href="" class="login__forgot-link">Забыли?</a>
                         <span class="login__password__toggle"></span>
-                        <input type="password" name="password" autocomplete="off">
+                        <input type="password" name="password" autocomplete="off" class="login__input">
                     </span>
-                </label>
+                <!-- </label> -->
+
+                <div class="login__row__valation"></div>
             </div>
             
             <div class="login__row clearfix">
-                <div class="login__col">
-                    <a href="" class="login__forgot-link">Забыли пароль?</a>
-                </div>
-
                 <div class="login__col">
                     @@include('./components/_checkbox.html', {
                         "name": "save_me",
@@ -45,13 +60,25 @@
                         "title": "Запомнить меня"
                     })
                 </div>
+
+                <div class="login__col">
+                    <button type="submit" class="login__button">Войти</button>
+                </div>
             </div>
         </div>
 
-        <button type="submit" class="btn btn_wide btn_primary btn_large">Войти</button>
+        <div class="login__alternative">
+            <div class="login__alternative__title">Или войдите с помощью</div>
+
+            <script src="//ulogin.ru/js/ulogin.js"></script>
+            <div id="uLogin" data-ulogin="display=panel;theme=classic;fields=first_name,last_name;providers=vkontakte,mailru,google,yandex,facebook;hidden=;redirect_uri=http%3A%2F%2Fsite.ru;mobilebuttons=0;"></div>
+        </div>
     </form>
     
     <!-- ВОССТАНОВИТЬ ПАРОЛЬ -->
 </div>
 
-@@include('./components/_scripts.html')
+@@include('./components/_footer.html')
+@@include('./components/_scripts.html', {
+    "noscripts": true
+})

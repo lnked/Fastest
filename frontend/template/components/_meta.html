@@ -53,9 +53,11 @@
 
 @@include('./_svgstore.html')
 
-<div class="preload show1 active">
-    <span class="preload__spinner"></span>
-    <span class="preload__label">
-        Загрузка...
-    </span>
-</div>
+@@if (typeof nopreload == 'undefined' || nopreload !== true) {
+    <div class="preload show1 active">
+        <span class="preload__spinner"></span>
+        <span class="preload__label">
+            Загрузка...
+        </span>
+    </div>
+}

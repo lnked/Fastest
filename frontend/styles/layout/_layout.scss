@@ -5,8 +5,10 @@
 	overflow-x: hidden;
 
     &_auth {
-        background: #000 url(/images/auth-background.jpg) 50% 50% no-repeat;
-        background-size: cover;
+        padding-bottom: 50px;
+        // background: #000 url(/images/auth-background.jpg) 50% 50% no-repeat;
+        // background-size: cover;
+        background-color: #F3F3F4;
     }
 }
 

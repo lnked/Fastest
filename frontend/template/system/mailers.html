@@ -1,0 +1,212 @@
+@@include('../components/_meta.html', {
+    "title": "F\"CMS"
+})
+
+@@include('../popups/_popup.html')
+
+@@include('../components/_sidebar.html', {
+    "page": "system"
+})
+
+<div class="layout-wrapper">
+    <div class="layout-content">
+        @@include('../components/_header.html', {
+            "current": "system"
+        })
+    
+        <div class="layout-content__wrapper">
+            
+            <div class="box">
+                <ul class="tab">
+                    <li class="tab-item">
+                        <a href="#tabs" class="tab-item__link _active">
+                            Настройки почты
+                        </a>
+                    </li>
+                    <li class="tab-item">
+                        <a href="#tabs" class="tab-item__link">
+                            Шаблоны почты
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="box">
+                <p><b>Управление настройками электронной почты.</b></p>
+
+                <div class="tab-pane active layout-cell" id="tabs14235-tab-01469241006228">
+                    <div class="form-group text-field span-left is-required " data-field-name="sender_name" id="Form-field-MailSetting-sender_name-group">
+                        <label for="Form-field-MailSetting-sender_name">
+                        Имя отправителя </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[sender_name]" id="Form-field-MailSetting-sender_name" value="OctoberCMS" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-right is-required " data-field-name="sender_email" id="Form-field-MailSetting-sender_email-group">
+                        <label for="Form-field-MailSetting-sender_email">
+                        Адрес отправителя </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[sender_email]" id="Form-field-MailSetting-sender_email" value="noreply@domain.tld" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group dropdown-field span-full " data-field-name="send_mode" id="Form-field-MailSetting-send_mode-group">
+                        <label for="Form-field-MailSetting-send_mode">
+                        Метод </label>
+                        <!-- Dropdown -->
+                        <select id="Form-field-MailSetting-send_mode" name="MailSetting[send_mode]" class="form-control custom-select select2-hidden-accessible" data-disposable="data-disposable" tabindex="-1" aria-hidden="true">
+                            <option value="log">
+                            Файл журнала </option>
+                            <option selected="selected" value="mail">
+                            PHP mail </option>
+                            <option value="sendmail">
+                            Sendmail </option>
+                            <option value="smtp">
+                            SMTP </option>
+                            <option value="mailgun">
+                            Mailgun </option>
+                            <option value="mandrill">
+                            Mandrill </option>
+                            <option value="ses">
+                            SES </option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-Form-field-MailSetting-send_mode-container"><span class="select2-selection__rendered" id="select2-Form-field-MailSetting-send_mode-container" title=" PHP mail ">
+                        PHP mail </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </div>
+                    <div class="form-group partial-field span-full hide" data-field-name="drivers_hint" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[mandrill][mailgun][ses]" data-trigger-closest-parent="form" id="Form-field-MailSetting-drivers_hint-group">
+                        <div class="callout callout-warning fade in no-subheader">
+                            <div class="header">
+                                <i class="icon-exclamation-circle"></i>
+                                <h3>Драйвера не установлены</h3>
+                            </div>
+                            <div class="content">
+                                <p>
+                                    Этот почтовый метод требует плагин "October.Drivers", установленный прежде, чем можно будет отправлять почту.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-field span-full hide" data-field-name="smtp_address" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_address-group">
+                        <label for="Form-field-MailSetting-smtp_address">
+                        Сервер исходящей почты </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[smtp_address]" id="Form-field-MailSetting-smtp_address" value="smtp.mailgun.org" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-left hide" data-field-name="smtp_port" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_port-group">
+                        <label for="Form-field-MailSetting-smtp_port">
+                        SMTP порт </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[smtp_port]" id="Form-field-MailSetting-smtp_port" value="587" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group dropdown-field span-right hide" data-field-name="smtp_encryption" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_encryption-group">
+                        <label for="Form-field-MailSetting-smtp_encryption">
+                        Протокол шифрования для SMTP </label>
+                        <!-- Dropdown -->
+                        <select id="Form-field-MailSetting-smtp_encryption" name="MailSetting[smtp_encryption]" class="form-control custom-select select2-hidden-accessible" data-disposable="data-disposable" tabindex="-1" aria-hidden="true">
+                            <option value="">
+                            Без шифрования </option>
+                            <option selected="selected" value="tls">
+                            TLS </option>
+                            <option value="ssl">
+                            SSL </option>
+                        </select>
+                        <span class="select2 select2-container select2-container--default" dir="ltr"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-Form-field-MailSetting-smtp_encryption-container"><span class="select2-selection__rendered" id="select2-Form-field-MailSetting-smtp_encryption-container" title=" TLS ">
+                        TLS </span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </div>
+                    <div class="form-group checkbox-field span-full hide" data-field-name="smtp_authorization" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_authorization-group">
+                        <!-- Checkbox -->
+                        <div class="checkbox custom-checkbox" tabindex="0">
+                            <input type="hidden" name="MailSetting[smtp_authorization]" value="0">
+                            <input type="checkbox" id="Form-field-MailSetting-smtp_authorization" name="MailSetting[smtp_authorization]" value="1">
+                            <label for="Form-field-MailSetting-smtp_authorization">
+                            Использовать SMTP авторизацию </label>
+                            <p class="help-block">
+                                Активируйте эту опцию, если ваш SMTP-сервер требует авторизацию.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group text-field span-left hide" data-field-name="smtp_user" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_user-group">
+                        <label for="Form-field-MailSetting-smtp_user">
+                        SMTP логин </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[smtp_user]" id="Form-field-MailSetting-smtp_user" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-right hide" data-field-name="smtp_password" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[smtp]" data-trigger-closest-parent="form" id="Form-field-MailSetting-smtp_password-group">
+                        <label for="Form-field-MailSetting-smtp_password">
+                        SMTP пароль </label>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[smtp_password]" id="Form-field-MailSetting-smtp_password" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-full hide" data-field-name="sendmail_path" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[sendmail]" data-trigger-closest-parent="form" id="Form-field-MailSetting-sendmail_path-group">
+                        <label for="Form-field-MailSetting-sendmail_path">
+                        Sendmail Путь </label>
+                        <p class="help-block before-field">
+                            Пожалуйста, укажите путь к sendmail.
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[sendmail_path]" id="Form-field-MailSetting-sendmail_path" value="/usr/sbin/sendmail -bs" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-full hide" data-field-name="mailgun_domain" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[mailgun]" data-trigger-closest-parent="form" id="Form-field-MailSetting-mailgun_domain-group">
+                        <label for="Form-field-MailSetting-mailgun_domain">
+                        Mailgun домен </label>
+                        <p class="help-block before-field">
+                            Пожалуйста, укажите Mailgun домен.
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[mailgun_domain]" id="Form-field-MailSetting-mailgun_domain" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-full hide" data-field-name="mailgun_secret" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[mailgun]" data-trigger-closest-parent="form" id="Form-field-MailSetting-mailgun_secret-group">
+                        <label for="Form-field-MailSetting-mailgun_secret">
+                        Секретный API-ключ </label>
+                        <p class="help-block before-field">
+                            Введите ваш Mailgun API-ключ.
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[mailgun_secret]" id="Form-field-MailSetting-mailgun_secret" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-full hide" data-field-name="mandrill_secret" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[mandrill]" data-trigger-closest-parent="form" id="Form-field-MailSetting-mandrill_secret-group">
+                        <label for="Form-field-MailSetting-mandrill_secret">
+                        Секретный ключ Mandrill </label>
+                        <p class="help-block before-field">
+                            Введите ваш Mandrill API-ключ.
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[mandrill_secret]" id="Form-field-MailSetting-mandrill_secret" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-left hide" data-field-name="ses_key" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[ses]" data-trigger-closest-parent="form" id="Form-field-MailSetting-ses_key-group">
+                        <label for="Form-field-MailSetting-ses_key">
+                        SES key </label>
+                        <p class="help-block before-field">
+                            Enter your SES API key
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[ses_key]" id="Form-field-MailSetting-ses_key" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-right hide" data-field-name="ses_secret" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[ses]" data-trigger-closest-parent="form" id="Form-field-MailSetting-ses_secret-group">
+                        <label for="Form-field-MailSetting-ses_secret">
+                        SES secret </label>
+                        <p class="help-block before-field">
+                            Enter your SES API secret key
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[ses_secret]" id="Form-field-MailSetting-ses_secret" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                    <div class="form-group text-field span-left hide" data-field-name="ses_region" data-trigger="[name=&quot;MailSetting[send_mode]&quot;]" data-trigger-action="show" data-trigger-condition="value[ses]" data-trigger-closest-parent="form" id="Form-field-MailSetting-ses_region-group">
+                        <label for="Form-field-MailSetting-ses_region">
+                        SES region </label>
+                        <p class="help-block before-field">
+                            Enter your SES region (e.g. us-east-1)
+                        </p>
+                        <!-- Text -->
+                        <input type="text" name="MailSetting[ses_region]" id="Form-field-MailSetting-ses_region" value="" placeholder="" class="form-control" autocomplete="off" maxlength="255">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <p><b>Изменение шаблонов писем, отправляемых пользователям и администраторам.</b></p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@@include('../components/_scripts.html')

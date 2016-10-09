@@ -1,1 +1,1 @@
-/Applications/MAMP/htdocs/markup.dev/skeleton/gulpfile.js
+/Users/edik/web/skeleton/gulpfile.js
